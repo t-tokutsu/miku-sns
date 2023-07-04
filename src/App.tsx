@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Hooks } from "./Hooks";
+import { Hooks } from "./features/player/Hooks";
 import { Layout } from "./layout/Layout";
 
 /** @package */
