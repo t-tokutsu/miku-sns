@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one",
+    "nucllear.vscode-extension-auto-import",
+    "streetsidesoftware.code-spell-checker",
+    "dsznajder.es7-react-js-snippets",
+    "wayou.vscode-todo-highlight"
+  ]
+}
