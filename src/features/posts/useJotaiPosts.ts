@@ -3,7 +3,8 @@ import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../player/jotai/useJotaiPlayer";
-import { TypePostDatum } from "./data";
+import { TypePostDatum } from "./data/posts";
+import { repliesData } from "./data/replies";
 
 const postsAtom = atomWithImmer<TypePostDatum[]>([
   {
@@ -46,6 +47,8 @@ export const useUpdateJotaiPosts = () => {
           if (unit.contains(now)) {
             if (lastPhraseStartTime !== unit.startTime) {
               lastPhraseStartTime = unit.startTime;
+              console.log("unit.startTime", unit.startTime);
+              console.log("unit.text", unit.text);
               const targetId = `${unit.startTime}_${Date.now()}`;
               setPosts((draft) => {
                 draft.unshift({
@@ -62,20 +65,19 @@ export const useUpdateJotaiPosts = () => {
                   replies: [],
                 });
               });
-              setTimeout(() => {
-                setPosts((draft) => {
-                  const targetPost = draft.find(({ id }) => id === targetId);
-                  targetPost?.replies.push({
-                    id: Date.now().toString(),
-                    accountId: "2",
-                    date: new Date(),
-                    content: "いいですね！",
-                    images: [],
-                    likes: [],
+              const targetRepliesDatum = repliesData[unit.startTime] ?? [];
+              targetRepliesDatum.forEach((reply) => {
+                setTimeout(() => {
+                  setPosts((draft) => {
+                    const targetPost = draft.find(({ id }) => id === targetId);
+                    targetPost?.replies.push({
+                      ...reply,
+                      id: Date.now().toString(),
+                      date: new Date(),
+                    });
                   });
-                });
-              }, getRandomNumber(1000, 3000));
-              console.log(unit.text);
+                }, getRandomNumber(1000, 5000));
+              });
             }
           }
         };

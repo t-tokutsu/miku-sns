@@ -1,6 +1,6 @@
 import { Box, HStack, Avatar, Stack, Spacer, Text } from "@chakra-ui/react";
 import { FC } from "react";
-import { accountData } from "./data";
+import { accountData } from "./data/accounts";
 import { Hooks } from "./Hooks";
 import { useJotaiPosts } from "./useJotaiPosts";
 
