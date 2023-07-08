@@ -10,7 +10,16 @@ const postsAtom = atomWithImmer<TypePostDatum[]>([
     content: "Hello, world!",
     images: [],
     likes: [],
-    replies: [],
+    replies: [
+      {
+        id: "2",
+        accountId: "2",
+        date: new Date(),
+        content: "Hello, Alice!",
+        images: [],
+        likes: [],
+      },
+    ],
   },
 ]);
 postsAtom.debugLabel = "postsAtom";

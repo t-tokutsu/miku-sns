@@ -13,8 +13,8 @@ export const App: FC = () => {
       <Layout>
         {/* 投稿 */}
         <Box>
-          {posts.map(({ id, accountId, date, content }) => (
-            <HStack key={id}>
+          {posts.map(({ id, accountId, date, content, replies }) => (
+            <HStack alignItems={"flex-start"} key={id}>
               <Avatar />
               <Box>
                 <Stack>
@@ -27,6 +27,7 @@ export const App: FC = () => {
                   <HStack>
                     <Text>いいね数</Text>
                     <Text>コメント数</Text>
+                    {replies.length && <Text>返信 {replies.length}件</Text>}
                   </HStack>
                 </Stack>
               </Box>
