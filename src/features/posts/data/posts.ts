@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
+import { TypeAccountId } from "./accounts";
 
 export type TypeBasicPost = {
   id: string;
-  accountId: string;
+  accountId: TypeAccountId;
   date: Date;
   content: ReactNode;
   images?: {

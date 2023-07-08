@@ -2,9 +2,7 @@ type TypeAccount = {
   name: string;
 };
 
-export const accountData: {
-  [id: string]: TypeAccount;
-} = {
+export const accountData = {
   "1": {
     name: "Alice",
   },
@@ -14,4 +12,8 @@ export const accountData: {
   "3": {
     name: "Carol",
   },
+} as const satisfies {
+  [id: string]: TypeAccount;
 };
+
+export type TypeAccountId = keyof typeof accountData;
