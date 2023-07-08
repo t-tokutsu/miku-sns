@@ -47,13 +47,27 @@ export const useUpdateJotaiPosts = () => {
               lastPhraseStartTime = unit.startTime;
               setPosts((draft) => {
                 draft.unshift({
-                  id: Date.now().toString(),
+                  id: `${unit.startTime}_${Date.now()}`,
                   content: unit.text,
                   date: new Date(),
                   accountId: "1",
                   images: [],
-                  likes: [],
+                  likes: [
+                    {
+                      accountId: "2",
+                    },
+                  ],
                   replies: [],
+                });
+              });
+              setPosts((draft) => {
+                draft[0].replies.push({
+                  id: Date.now().toString(),
+                  accountId: "2",
+                  date: new Date(),
+                  content: "いいですね！",
+                  images: [],
+                  likes: [],
                 });
               });
               console.log(unit.text);

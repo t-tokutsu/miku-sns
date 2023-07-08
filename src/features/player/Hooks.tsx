@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { FC } from "react";
 import { useUpdateJotaiArtistName } from "./jotai/useJotaiArtistName";
+import { useUpdateJotaiDuration } from "./jotai/useJotaiDuration";
 import { useUpdateJotaiIsPlaying } from "./jotai/useJotaiIsPlaying";
 import { useUpdateJotaiPlayer } from "./jotai/useJotaiPlayer";
 import { useUpdateJotaiPosition } from "./jotai/useJotaiPosition";
@@ -13,5 +14,6 @@ export const Hooks: FC = () => {
   useUpdateJotaiArtistName();
   useUpdateJotaiIsPlaying();
   useUpdateJotaiPosition();
+  useUpdateJotaiDuration();
   return <Box display={"none"} ref={mediaElementRef} />;
 };
