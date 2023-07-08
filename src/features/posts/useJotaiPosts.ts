@@ -45,9 +45,10 @@ export const useUpdateJotaiPosts = () => {
           if (unit.contains(now)) {
             if (lastPhraseStartTime !== unit.startTime) {
               lastPhraseStartTime = unit.startTime;
+              const targetId = `${unit.startTime}_${Date.now()}`;
               setPosts((draft) => {
                 draft.unshift({
-                  id: `${unit.startTime}_${Date.now()}`,
+                  id: targetId,
                   content: unit.text,
                   date: new Date(),
                   accountId: "1",
@@ -60,16 +61,19 @@ export const useUpdateJotaiPosts = () => {
                   replies: [],
                 });
               });
-              setPosts((draft) => {
-                draft[0].replies.push({
-                  id: Date.now().toString(),
-                  accountId: "2",
-                  date: new Date(),
-                  content: "いいですね！",
-                  images: [],
-                  likes: [],
+              setTimeout(() => {
+                setPosts((draft) => {
+                  const targetPost = draft.find(({ id }) => id === targetId);
+                  targetPost?.replies.push({
+                    id: Date.now().toString(),
+                    accountId: "2",
+                    date: new Date(),
+                    content: "いいですね！",
+                    images: [],
+                    likes: [],
+                  });
                 });
-              });
+              }, 3000);
               console.log(unit.text);
             }
           }
