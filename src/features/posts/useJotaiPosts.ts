@@ -1,5 +1,6 @@
 import { useAtom } from "jotai";
 import { atomWithImmer } from "jotai-immer";
+import { getRandomNumber } from "../../functions/getRandomNumber";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../player/jotai/useJotaiPlayer";
 import { TypePostDatum } from "./data";
@@ -73,7 +74,7 @@ export const useUpdateJotaiPosts = () => {
                     likes: [],
                   });
                 });
-              }, 3000);
+              }, getRandomNumber(1000, 3000));
               console.log(unit.text);
             }
           }
