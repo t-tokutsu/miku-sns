@@ -1,11 +1,12 @@
 import { Box, SimpleGrid, Stack } from "@chakra-ui/react";
 import { FC, ReactNode } from "react";
+import { Player } from "../features/player";
 
 export const Layout: FC<{
   children: ReactNode;
 }> = ({ children }) => {
   return (
-    <SimpleGrid gridTemplateColumns={"auto 1fr"}>
+    <SimpleGrid alignItems={"stretch"} gridTemplateColumns={"auto 1fr"}>
       {/* メニューエリア */}
       <Stack w={"200px"}>
         <Box>ロゴ</Box>
@@ -17,7 +18,12 @@ export const Layout: FC<{
         </Stack>
       </Stack>
       {/* メインエリア */}
-      <Box>{children}</Box>
+      <Box>
+        <Box bg={"red.100"} minH={"100vh"}>
+          {children}
+        </Box>
+        <Player />
+      </Box>
     </SimpleGrid>
   );
 };

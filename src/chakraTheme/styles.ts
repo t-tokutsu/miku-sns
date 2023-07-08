@@ -6,6 +6,11 @@ import { colors } from './colors';
  */
 export const styles = {
   global: {
-    body: {},
+    body: {
+      minHeight: "100vh",
+    },
+    "#root": {
+      height: "100%",
+    },
   },
 };
