@@ -1,32 +1,37 @@
 import { Avatar, Box, HStack, Spacer, Stack, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import { Hooks } from "./features/player/Hooks";
+import { accountData } from "./features/posts/data";
+import { useJotaiPosts } from "./features/posts/useJotaiPosts";
 import { Layout } from "./layout/Layout";
 
 /** @package */
 export const App: FC = () => {
+  const { posts } = useJotaiPosts();
   return (
     <>
       <Layout>
+        {/* 投稿 */}
         <Box>
-          {/* 投稿 */}
-          <HStack>
-            <Avatar />
-            <Box>
-              <Stack>
-                <HStack>
-                  <Text>アカウント名</Text>
-                  <Spacer />
-                  <Text>投稿時間</Text>
-                </HStack>
-                <Text>投稿内容</Text>
-                <HStack>
-                  <Text>いいね数</Text>
-                  <Text>コメント数</Text>
-                </HStack>
-              </Stack>
-            </Box>
-          </HStack>
+          {posts.map(({ id, accountId, date, content }) => (
+            <HStack key={id}>
+              <Avatar />
+              <Box>
+                <Stack>
+                  <HStack>
+                    <Text>{accountData[accountId].name}</Text>
+                    <Spacer />
+                    <Text>{date.toString()}</Text>
+                  </HStack>
+                  <Text>{content}</Text>
+                  <HStack>
+                    <Text>いいね数</Text>
+                    <Text>コメント数</Text>
+                  </HStack>
+                </Stack>
+              </Box>
+            </HStack>
+          ))}
         </Box>
       </Layout>
       <Hooks />
