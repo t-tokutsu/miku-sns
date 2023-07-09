@@ -8,7 +8,7 @@ export const Layout: FC<{
   return (
     <SimpleGrid alignItems={"stretch"} gridTemplateColumns={"auto 1fr"}>
       {/* メニューエリア */}
-      <Stack w={"200px"}>
+      <Stack bg={"green.100"} w={"200px"}>
         <Box>ロゴ</Box>
         <Stack>
           <Box>メニュー</Box>
@@ -18,11 +18,9 @@ export const Layout: FC<{
         </Stack>
       </Stack>
       {/* メインエリア */}
-      <Box>
-        <Box bg={"red.100"} minH={"100vh"}>
-          {children}
-        </Box>
-        <Player />
+      <Box bg={"red.100"} minH={"100vh"} pos={"relative"}>
+        <Box>{children}</Box>
+        <Player bottom={4} left={4} pos={"absolute"} right={4} />
       </Box>
     </SimpleGrid>
   );
