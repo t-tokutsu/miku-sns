@@ -38,7 +38,7 @@ export const useJotaiPosts = () => {
 
 export const useUpdateJotaiPosts = () => {
   const { player } = useJotaiPlayer();
-  const { setPosts, getReplies } = useJotaiPosts();
+  const { setPosts } = useJotaiPosts();
   const toast = useToast();
 
   usePlayerListener({

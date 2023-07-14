@@ -1,6 +1,7 @@
 import { Box, SimpleGrid, Stack } from "@chakra-ui/react";
 import { FC, ReactNode } from "react";
 import { Player } from "../features/player";
+import { PostButton } from "../features/postButton";
 
 export const Layout: FC<{
   children: ReactNode;
@@ -22,6 +23,7 @@ export const Layout: FC<{
         <Box>{children}</Box>
         <Player bottom={4} left={4} pos={"absolute"} right={4} />
       </Box>
+      <PostButton />
     </SimpleGrid>
   );
 };

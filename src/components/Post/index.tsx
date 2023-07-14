@@ -28,7 +28,7 @@ export const Post: FC<{
           <Text>{accountData[accountId].name}</Text>
           <Text>{format(date, "yyyy/MM/dd")}</Text>
         </HStack>
-        <Text>{content}</Text>
+        <Text whiteSpace={"pre"}>{content}</Text>
         <HStack>
           <Likes post={post} />
           <Replies post={post} />
