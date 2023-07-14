@@ -10,7 +10,7 @@ export type TypePost = {
     src: string;
   }[];
   likeAccountIds: TypeAccountId[];
-  replies: TypePost[];
+  parentPostId?: string;
 };
 
 export const postsData: TypePost[] = [];

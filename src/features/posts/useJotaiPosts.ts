@@ -13,32 +13,32 @@ const postsAtom = atomWithImmer<TypePost[]>([
     id: "1",
     accountId: "1",
     date: new Date(),
-    content: "Hello, world!",
-    images: [],
+    content: "メインスレッドです",
     likeAccountIds: [],
-    replies: [
-      {
-        id: "2",
-        accountId: "2",
-        date: new Date(),
-        content: "Hello, Alice!",
-        images: [],
-        likeAccountIds: [],
-        replies: [],
-      },
-    ],
+  },
+  {
+    id: "2",
+    accountId: "2",
+    date: new Date(),
+    content: "返信です",
+    likeAccountIds: [],
+    parentPostId: "1",
   },
 ]);
 postsAtom.debugLabel = "postsAtom";
 
 export const useJotaiPosts = () => {
   const [posts, setPosts] = useAtom(postsAtom);
-  return { posts, setPosts };
+
+  const getReplies = (postId: string): TypePost[] =>
+    posts.filter(({ parentPostId }) => parentPostId === postId);
+
+  return { posts, setPosts, getReplies };
 };
 
 export const useUpdateJotaiPosts = () => {
   const { player } = useJotaiPlayer();
-  const { setPosts } = useJotaiPosts();
+  const { setPosts, getReplies } = useJotaiPosts();
   const toast = useToast();
 
   usePlayerListener({
@@ -61,9 +61,7 @@ export const useUpdateJotaiPosts = () => {
                     content: unit.text,
                     date: new Date(),
                     accountId: "1",
-                    images: [],
                     likeAccountIds: ["2"],
-                    replies: [],
                   });
                 });
                 toast({
@@ -83,11 +81,12 @@ export const useUpdateJotaiPosts = () => {
                       const targetPost = draft.find(
                         ({ id }) => id === targetId
                       );
-                      targetPost?.replies.push({
+                      if (!targetPost) return;
+                      draft.push({
                         ...reply,
                         id: Date.now().toString(),
                         date: new Date(),
-                        replies: [],
+                        parentPostId: targetPost.id,
                       });
                     });
                   }, getRandomNumber(1000, 5000));

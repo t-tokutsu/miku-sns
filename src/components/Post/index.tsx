@@ -8,10 +8,9 @@ import { Replies } from "../../features/posts/Replies";
 
 export const Post: FC<{
   post: TypePost;
-  hasReplyButton?: boolean;
   stackProps?: StackProps;
-}> = ({ post, hasReplyButton = true, stackProps }) => {
-  const { id, accountId, date, content, replies } = post;
+}> = ({ post, stackProps }) => {
+  const { id, accountId, date, content } = post;
   return (
     <HStack
       alignItems={"flex-start"}
@@ -32,7 +31,7 @@ export const Post: FC<{
         <Text>{content}</Text>
         <HStack>
           <Likes post={post} />
-          {hasReplyButton && replies.length && <Replies post={post} />}
+          <Replies post={post} />
         </HStack>
       </Stack>
     </HStack>

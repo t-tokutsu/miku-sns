@@ -15,18 +15,20 @@ import { FC } from "react";
 import { BiCommentDetail } from "react-icons/bi";
 import { Post } from "../../components/Post";
 import { TypePost } from "./data/posts";
+import { useJotaiPosts } from "./useJotaiPosts";
 
 /** @package */
 export const Replies: FC<{
   post: TypePost;
 }> = ({ post }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { getReplies } = useJotaiPosts();
   return (
     <>
       <chakra.button onClick={onOpen}>
         <HStack>
           <Icon as={BiCommentDetail} />
-          <Text>{post.replies?.length}</Text>
+          <Text>{getReplies(post.id).length}</Text>
         </HStack>
       </chakra.button>
       <Drawer isOpen={isOpen} onClose={onClose} size={"sm"}>
@@ -43,7 +45,7 @@ export const Replies: FC<{
                 zIndex: 1,
               }}
             />
-            {post.replies.map((reply) => (
+            {getReplies(post.id).map((reply) => (
               <Post key={reply.id} post={reply} />
             ))}
           </DrawerBody>

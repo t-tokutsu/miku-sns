@@ -6,10 +6,11 @@ import { useJotaiPosts } from "./useJotaiPosts";
 
 export const Posts: FC = () => {
   const { posts } = useJotaiPosts();
+  const mainPosts = posts.filter(({ parentPostId }) => !parentPostId);
   return (
     <>
       <Box>
-        {posts.map((post) => (
+        {mainPosts.map((post) => (
           <Post key={post.id} post={post} />
         ))}
       </Box>
