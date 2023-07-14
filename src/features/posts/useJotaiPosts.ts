@@ -1,8 +1,10 @@
+import { useToast } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../player/jotai/useJotaiPlayer";
+import { accountData } from "./data/accounts";
 import { TypePostDatum } from "./data/posts";
 import { repliesData } from "./data/replies";
 
@@ -36,6 +38,7 @@ export const useJotaiPosts = () => {
 export const useUpdateJotaiPosts = () => {
   const { player } = useJotaiPlayer();
   const { setPosts } = useJotaiPosts();
+  const toast = useToast();
 
   usePlayerListener({
     onVideoReady: () => {
@@ -50,34 +53,48 @@ export const useUpdateJotaiPosts = () => {
               console.log("unit.startTime", unit.startTime);
               console.log("unit.text", unit.text);
               const targetId = `${unit.startTime}_${Date.now()}`;
-              setPosts((draft) => {
-                draft.unshift({
-                  id: targetId,
-                  content: unit.text,
-                  date: new Date(),
-                  accountId: "1",
-                  images: [],
-                  likes: [
-                    {
-                      accountId: "2",
-                    },
-                  ],
-                  replies: [],
-                });
-              });
-              const targetRepliesDatum = repliesData[unit.startTime] ?? [];
-              targetRepliesDatum.forEach((reply) => {
-                setTimeout(() => {
-                  setPosts((draft) => {
-                    const targetPost = draft.find(({ id }) => id === targetId);
-                    targetPost?.replies.push({
-                      ...reply,
-                      id: Date.now().toString(),
-                      date: new Date(),
-                    });
+              setTimeout(() => {
+                setPosts((draft) => {
+                  draft.unshift({
+                    id: targetId,
+                    content: unit.text,
+                    date: new Date(),
+                    accountId: "1",
+                    images: [],
+                    likes: [
+                      {
+                        accountId: "2",
+                      },
+                    ],
+                    replies: [],
                   });
-                }, getRandomNumber(1000, 5000));
-              });
+                });
+                toast({
+                  title: accountData["1"].name,
+                  description: unit.text,
+                  status: "info",
+                  duration: 4000,
+                  variant: "subtle",
+                  position: "bottom-right",
+                  isClosable: true,
+                });
+
+                const targetRepliesDatum = repliesData[unit.startTime] ?? [];
+                targetRepliesDatum.forEach((reply) => {
+                  setTimeout(() => {
+                    setPosts((draft) => {
+                      const targetPost = draft.find(
+                        ({ id }) => id === targetId
+                      );
+                      targetPost?.replies.push({
+                        ...reply,
+                        id: Date.now().toString(),
+                        date: new Date(),
+                      });
+                    });
+                  }, getRandomNumber(1000, 5000));
+                });
+              }, 200);
             }
           }
         };

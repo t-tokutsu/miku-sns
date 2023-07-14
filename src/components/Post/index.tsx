@@ -1,4 +1,4 @@
-import { HStack, Avatar, Stack, Text } from "@chakra-ui/react";
+import { HStack, Avatar, Stack, Text, StackProps } from "@chakra-ui/react";
 import { format } from "date-fns";
 import { FC } from "react";
 import { accountData } from "../../features/posts/data/accounts";
@@ -7,15 +7,20 @@ import { Replies } from "../../features/posts/Replies";
 
 export const Post: FC<{
   post: TypePostDatum;
-}> = ({ post: { id, accountId, date, content, replies } }) => {
+  hasReplyButton?: boolean;
+  stackProps?: StackProps;
+}> = ({ post, hasReplyButton = true, stackProps }) => {
+  const { id, accountId, date, content, replies } = post;
   return (
     <HStack
       alignItems={"flex-start"}
+      bg={"white"}
       borderBottomColor={"blackAlpha.700"}
       borderBottomWidth={1}
       justifySelf={"stretch"}
       key={id}
       p={4}
+      {...stackProps}
     >
       <Avatar />
       <Stack w={"full"}>
@@ -27,7 +32,7 @@ export const Post: FC<{
         <HStack>
           <Text>いいね数</Text>
           <Text>コメント数</Text>
-          {replies.length && <Replies replies={replies} />}
+          {hasReplyButton && replies.length && <Replies post={post} />}
         </HStack>
       </Stack>
     </HStack>
