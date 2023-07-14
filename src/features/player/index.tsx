@@ -1,5 +1,6 @@
-import { Box, Button, HStack, Stack, StackProps, Text } from "@chakra-ui/react";
+import { HStack, Icon, Stack, StackProps, Text } from "@chakra-ui/react";
 import { FC } from "react";
+import { MdPlayArrow, MdPause } from "react-icons/md";
 import { Hooks } from "./Hooks";
 import { useTogglePlay } from "./hooks/useTogglePlay";
 import { useJotaiArtistName } from "./jotai/useJotaiArtistName";
@@ -16,11 +17,13 @@ export const Player: FC<StackProps> = ({ ...stackProps }) => {
     <>
       <Stack bg={"blue.100"} borderRadius={4} p={4} {...stackProps}>
         <HStack>
-          <Button onClick={togglePlay}>{isPlaying ? "停止" : "再生"}</Button>
-          <Box>
+          <HStack as={"button"} onClick={togglePlay}>
+            <Icon as={isPlaying ? MdPause : MdPlayArrow} fontSize={36} />
+          </HStack>
+          <HStack>
             <Text fontWeight={"bold"}>{songName}</Text>
             <Text fontSize={"sm"}>{artistName}</Text>
-          </Box>
+          </HStack>
         </HStack>
         <MusicSlider />
       </Stack>
