@@ -6,9 +6,13 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Link,
+  Icon,
+  chakra,
+  HStack,
+  Text,
 } from "@chakra-ui/react";
 import { FC } from "react";
+import { BiCommentDetail } from "react-icons/bi";
 import { Post } from "../../components/Post";
 import { TypePostDatum } from "./data/posts";
 
@@ -19,7 +23,12 @@ export const Replies: FC<{
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Link onClick={onOpen}>返信 {post.replies.length}件</Link>
+      <chakra.button onClick={onOpen}>
+        <HStack>
+          <Icon as={BiCommentDetail} />
+          <Text>{post.replies.length}</Text>
+        </HStack>
+      </chakra.button>
       <Drawer isOpen={isOpen} onClose={onClose} size={"sm"}>
         <DrawerOverlay />
         <DrawerContent>
