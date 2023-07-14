@@ -1,15 +1,17 @@
-import { Button, Stack, Textarea } from "@chakra-ui/react";
+import { Button, Stack, StackProps, Textarea } from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
-import { useJotaiPosts } from "../posts/useJotaiPosts";
+import { useJotaiPosts } from "./useJotaiPosts";
 
-export const PostModalInner: FC<{
-  onClose: () => void;
-}> = ({ onClose }) => {
+export const RepliesInput: FC<
+  {
+    parentPostId: string;
+  } & StackProps
+> = ({ parentPostId, ...stackProps }) => {
   const { setPosts } = useJotaiPosts();
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
-    <Stack>
+    <Stack {...stackProps}>
       <Textarea
         onChange={(e) => {
           setContent(e.target.value);
@@ -21,14 +23,14 @@ export const PostModalInner: FC<{
         onClick={() => {
           setPosts((draft) => {
             draft.unshift({
-              id: uuid,
+              id: `${uuid}_${Date.now()}`,
               content,
               date: new Date(),
               accountId: "1",
               likeAccountIds: ["2"],
+              parentPostId,
             });
           });
-          onClose();
         }}
       >
         ポストする
