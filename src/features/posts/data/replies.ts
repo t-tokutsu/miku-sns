@@ -1,7 +1,7 @@
-import { TypeBasicPost } from "./posts";
+import { TypePost } from "./posts";
 
 export const repliesData: {
-  [startTime: number]: Omit<TypeBasicPost, "date" | "id">[];
+  [startTime: number]: Omit<TypePost, "date" | "id" | "replies">[];
 } = {
   // はじまりのぴかーん（わー！）
   13726: [

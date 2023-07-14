@@ -2,12 +2,12 @@ import { HStack, Avatar, Stack, Text, StackProps } from "@chakra-ui/react";
 import { format } from "date-fns";
 import { FC } from "react";
 import { accountData } from "../../features/posts/data/accounts";
-import { TypePostDatum } from "../../features/posts/data/posts";
+import { TypePost } from "../../features/posts/data/posts";
 import { Likes } from "../../features/posts/Likes";
 import { Replies } from "../../features/posts/Replies";
 
 export const Post: FC<{
-  post: TypePostDatum;
+  post: TypePost;
   hasReplyButton?: boolean;
   stackProps?: StackProps;
 }> = ({ post, hasReplyButton = true, stackProps }) => {

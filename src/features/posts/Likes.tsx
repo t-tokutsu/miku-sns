@@ -2,11 +2,11 @@ import { HStack, Text, chakra, Icon } from "@chakra-ui/react";
 import { FC } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { TypeAccountId } from "./data/accounts";
-import { TypePostDatum } from "./data/posts";
+import { TypePost } from "./data/posts";
 import { useJotaiPosts } from "./useJotaiPosts";
 
 export const Likes: FC<{
-  post: TypePostDatum;
+  post: TypePost;
 }> = ({ post: { id, likes } }) => {
   const { setPosts } = useJotaiPosts();
   const userAccountId: TypeAccountId = "1";

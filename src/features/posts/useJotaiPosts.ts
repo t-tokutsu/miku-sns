@@ -5,10 +5,10 @@ import { getRandomNumber } from "../../functions/getRandomNumber";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../player/jotai/useJotaiPlayer";
 import { accountData } from "./data/accounts";
-import { TypePostDatum } from "./data/posts";
+import { TypePost } from "./data/posts";
 import { repliesData } from "./data/replies";
 
-const postsAtom = atomWithImmer<TypePostDatum[]>([
+const postsAtom = atomWithImmer<TypePost[]>([
   {
     id: "1",
     accountId: "1",
@@ -24,6 +24,7 @@ const postsAtom = atomWithImmer<TypePostDatum[]>([
         content: "Hello, Alice!",
         images: [],
         likes: [],
+        replies: [],
       },
     ],
   },
@@ -90,6 +91,7 @@ export const useUpdateJotaiPosts = () => {
                         ...reply,
                         id: Date.now().toString(),
                         date: new Date(),
+                        replies: [],
                       });
                     });
                   }, getRandomNumber(1000, 5000));

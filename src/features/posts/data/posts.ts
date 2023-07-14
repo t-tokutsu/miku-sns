@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { TypeAccountId } from "./accounts";
 
-export type TypeBasicPost = {
+export type TypePost = {
   id: string;
   accountId: TypeAccountId;
   date: Date;
@@ -12,10 +12,7 @@ export type TypeBasicPost = {
   likes: {
     accountId: string;
   }[];
+  replies: TypePost[];
 };
 
-export type TypePostDatum = TypeBasicPost & {
-  replies: TypeBasicPost[];
-};
-
-export const postsData: TypePostDatum[] = [];
+export const postsData: TypePost[] = [];

@@ -14,11 +14,11 @@ import {
 import { FC } from "react";
 import { BiCommentDetail } from "react-icons/bi";
 import { Post } from "../../components/Post";
-import { TypePostDatum } from "./data/posts";
+import { TypePost } from "./data/posts";
 
 /** @package */
 export const Replies: FC<{
-  post: TypePostDatum;
+  post: TypePost;
 }> = ({ post }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -26,7 +26,7 @@ export const Replies: FC<{
       <chakra.button onClick={onOpen}>
         <HStack>
           <Icon as={BiCommentDetail} />
-          <Text>{post.replies.length}</Text>
+          <Text>{post.replies?.length}</Text>
         </HStack>
       </chakra.button>
       <Drawer isOpen={isOpen} onClose={onClose} size={"sm"}>
@@ -45,13 +45,7 @@ export const Replies: FC<{
               }}
             />
             {post.replies.map((reply) => (
-              <Post
-                key={reply.id}
-                post={{
-                  ...reply,
-                  replies: [],
-                }}
-              />
+              <Post key={reply.id} post={reply} />
             ))}
           </DrawerBody>
         </DrawerContent>
