@@ -36,7 +36,6 @@ export const Replies: FC<{
           <DrawerHeader>返信</DrawerHeader>
           <DrawerBody p={0}>
             <Post
-              hasReplyButton={false}
               post={post}
               stackProps={{
                 pos: "sticky",
