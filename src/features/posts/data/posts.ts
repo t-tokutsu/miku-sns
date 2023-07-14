@@ -9,9 +9,7 @@ export type TypePost = {
   images?: {
     src: string;
   }[];
-  likes: {
-    accountId: string;
-  }[];
+  likeAccountIds: TypeAccountId[];
   replies: TypePost[];
 };
 

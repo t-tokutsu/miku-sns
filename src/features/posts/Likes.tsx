@@ -7,10 +7,12 @@ import { useJotaiPosts } from "./useJotaiPosts";
 
 export const Likes: FC<{
   post: TypePost;
-}> = ({ post: { id, likes } }) => {
+}> = ({ post: { id, likeAccountIds } }) => {
   const { setPosts } = useJotaiPosts();
   const userAccountId: TypeAccountId = "1";
-  const isLiked = likes.some((like) => like.accountId === userAccountId);
+  const isLiked = likeAccountIds.some(
+    (likeAccountId) => likeAccountId === userAccountId
+  );
   return (
     <chakra.button
       onClick={() =>
@@ -18,22 +20,20 @@ export const Likes: FC<{
           const targetPost = draft.find(
             ({ id: draftPostId }) => draftPostId === id
           );
-          if (!targetPost?.likes) return;
+          if (!targetPost?.likeAccountIds) return;
           if (isLiked) {
-            targetPost.likes = targetPost.likes.filter(
-              ({ accountId }) => accountId !== userAccountId
+            targetPost.likeAccountIds = targetPost.likeAccountIds.filter(
+              (likeAccountId) => likeAccountId !== userAccountId
             );
           } else {
-            targetPost.likes.push({
-              accountId: userAccountId,
-            });
+            targetPost.likeAccountIds.push(userAccountId);
           }
         })
       }
     >
       <HStack>
         <Icon as={isLiked ? BsHeartFill : BsHeart} />
-        <Text>{likes.length}</Text>
+        <Text>{likeAccountIds.length}</Text>
       </HStack>
     </chakra.button>
   );

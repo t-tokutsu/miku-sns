@@ -8,102 +8,102 @@ export const repliesData: {
     {
       accountId: "2",
       content: "さぁ、新たな物語が幕を開ける時間ですね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！このはじまりに胸が高鳴ります！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！一緒に素晴らしい旅を始めましょう！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！これからの展開が楽しみでワクワクしてきました！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！新たな挑戦の始まりですね！頑張ってください！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！未知の世界へ飛び込む勇気を持っていますね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！この瞬間を大切にしてください！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！新たな扉が開かれましたね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！輝く未来への第一歩です！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！何か素晴らしいことが起きそうな予感がします！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！新しいチャレンジに成功を祈っています！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！この瞬間がきたんですね！おめでとうございます！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！未来への道が開けました！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！希望と可能性が広がる瞬間です！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！新たなステージに立つ勇気が素晴らしいです！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！このはじまりが人生を変えるかもしれません！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！これからの未来が楽しみでたまりません！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！一歩踏み出す勇気に感銘を受けました！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "ぴかーん！夢を叶えるためのスタートラインですね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！新たな冒険が始まるというワクワク感がたまりません！",
-      likes: [],
+      likeAccountIds: [],
     },
   ],
 
@@ -112,102 +112,102 @@ export const repliesData: {
     {
       accountId: "2",
       content: "さすがです！アイデアが輝く人ですね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！それはまるで星のような輝きですね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！ひらめきの光が周りを照らしています！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！まさに天才の発想です！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！脳内のスパークがジャンプしました！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！それはまるで宝石のようなアイデアです！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！まるでアイデアの妖精が舞い降りたみたい！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！そんなアイデアならノーベル賞も夢じゃない！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！ひらめきの光が照らす未来は明るいですね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！まるでアイデアのオリンピックです！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！ひらめきの光が闇を払ってくれそう！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！輝くアイデアで世界を驚かせてください！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！ひらめきの瞬間を見逃さないでください！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！そのアイデアにはキラキラとした魔法が宿っています！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！アイデアの光が頭の中でパーティーをしている！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！それはまるでアイデアの花火大会です！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！ひらめきの輝きで世界を魅了してください！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！まるで頭の中に星が降り注いでいるみたい！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "わー！そのアイデアはスパークルが詰まっていますね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "かがやく！まるでアイデアのダイヤモンドです！",
-      likes: [],
+      likeAccountIds: [],
     },
   ],
 
@@ -216,119 +216,119 @@ export const repliesData: {
     {
       accountId: "2",
       content: "未知なるアナログ合成！まさにサイケデリックな音楽の世界ですね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログと未知なる合成が出会うと、どんなサウンドが生まれるのか想像できない！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！もしかして、タイムマシンでモーツァルトとビートルズがコラボした音楽？",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知なる領域に挑戦するなんて、まるで宇宙旅行みたい！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！たぶん、未来の音楽家たちが驚くほど斬新なサウンドを生み出すんだろうな！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知の音色が生まれると、きっとDJは魔法使いみたいな存在になる！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！まさか、モーリス・ラヴェルとダフト・パンクがコラボした音楽が聴けるのか！？",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知なるサウンドを追求すると、きっとスタジオが音楽の秘密基地に変身するんだろうな！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "未知なるアナログ合成！それはまるで音楽界のXファイルだ！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知なる音のパズルを解き明かす音楽探偵になりたい！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！たぶん、まるで音楽のフランケンシュタインみたいな存在だよね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知のサウンドを追い求めると、きっと音楽のワンダーランドに迷い込むこと間違いなし！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！もしかして、ビートルズの楽曲がチャップリン映画のBGMと組み合わさったらどんな感じになるのかな？",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知なる領域に踏み込むと、きっとスイッチを押した瞬間にトロンの世界に飛び込むんだろうな！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！それはまるで音楽のアトランティスのような存在だね！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知なる音楽の化学反応を起こすなんて、まるで音楽界のマッドサイエンティストだ！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "未知なるアナログ合成！もしかしたら、ビートルズとモーツァルトが時空を超えて共演する音楽が聴けるかもしれない！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知の音楽の扉を開くと、きっとそこには驚きと魔法のような音が待っているんだろうな！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content: "未知なるアナログ合成！まさに音楽のダークマターだ！",
-      likes: [],
+      likeAccountIds: [],
     },
     {
       accountId: "2",
       content:
         "わー！アナログ合成で未知なるサウンドを創り出すと、まるで音楽の魔術師になった気分！",
-      likes: [],
+      likeAccountIds: [],
     },
   ],
 

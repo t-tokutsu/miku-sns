@@ -15,7 +15,7 @@ const postsAtom = atomWithImmer<TypePost[]>([
     date: new Date(),
     content: "Hello, world!",
     images: [],
-    likes: [],
+    likeAccountIds: [],
     replies: [
       {
         id: "2",
@@ -23,7 +23,7 @@ const postsAtom = atomWithImmer<TypePost[]>([
         date: new Date(),
         content: "Hello, Alice!",
         images: [],
-        likes: [],
+        likeAccountIds: [],
         replies: [],
       },
     ],
@@ -62,11 +62,7 @@ export const useUpdateJotaiPosts = () => {
                     date: new Date(),
                     accountId: "1",
                     images: [],
-                    likes: [
-                      {
-                        accountId: "2",
-                      },
-                    ],
+                    likeAccountIds: ["2"],
                     replies: [],
                   });
                 });
