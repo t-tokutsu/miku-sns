@@ -1,4 +1,4 @@
-import { useToast } from "@chakra-ui/react";
+import { Stack, Text, useToast } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
@@ -149,13 +149,35 @@ export const useUpdateJotaiPosts = () => {
                   });
                 });
                 toast({
-                  title: accountData["1"].name,
-                  description: unit.text,
-                  status: "info",
                   duration: 4000,
-                  variant: "subtle",
-                  position: "bottom-right",
+                  position: "top",
                   isClosable: true,
+                  render: ({ onClose }) => (
+                    <Stack
+                      as={"a"}
+                      bg={
+                        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
+                      }
+                      borderRadius={8}
+                      borderWidth={1}
+                      color={"white"}
+                      href={`#${targetId}`}
+                      onClick={() => {
+                        onClose();
+                      }}
+                      px={2}
+                      py={1}
+                      spacing={0}
+                      w={"full"}
+                    >
+                      <Text fontSize={"sm"} fontWeight={"bold"}>
+                        {accountData["1"].name}
+                      </Text>
+                      <Text fontSize={"sm"} fontWeight={"bold"}>
+                        {unit.text}
+                      </Text>
+                    </Stack>
+                  ),
                 });
 
                 const targetRepliesDatum = repliesData[unit.startTime] ?? [];

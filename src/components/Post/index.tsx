@@ -26,6 +26,7 @@ export const Post: FC<{
         "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
       }
       borderRadius={8}
+      id={post.id}
       p={0.5}
       {...boxProps}
     >
@@ -48,7 +49,7 @@ export const Post: FC<{
             <Text fontSize={"sm"}>{format(date, "yyyy/MM/dd")}</Text>
           </HStack>
           <Stack>
-            <Text fontSize={"sm"} whiteSpace={"pre"}>
+            <Text fontSize={"sm"} whiteSpace={"pre-wrap"}>
               {content}
             </Text>
             <HStack spacing={4}>
