@@ -1,4 +1,11 @@
-import { HStack, Avatar, Stack, Text, StackProps } from "@chakra-ui/react";
+import {
+  HStack,
+  Avatar,
+  Stack,
+  Text,
+  StackProps,
+  Spacer,
+} from "@chakra-ui/react";
 import { format } from "date-fns";
 import { FC } from "react";
 import { accountData } from "../../features/posts/data/accounts";
@@ -22,14 +29,15 @@ export const Post: FC<{
       p={4}
       {...stackProps}
     >
-      <Avatar />
+      <Avatar size={"sm"} />
       <Stack w={"full"}>
-        <HStack justifyContent={"flex-start"}>
+        <HStack>
           <Text>{accountData[accountId].name}</Text>
+          <Spacer />
           <Text>{format(date, "yyyy/MM/dd")}</Text>
         </HStack>
         <Text whiteSpace={"pre"}>{content}</Text>
-        <HStack>
+        <HStack spacing={4}>
           <Likes post={post} />
           <Replies post={post} />
         </HStack>

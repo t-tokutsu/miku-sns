@@ -6,7 +6,6 @@ import { useTogglePlay } from "./hooks/useTogglePlay";
 import { useJotaiArtistName } from "./jotai/useJotaiArtistName";
 import { useJotaiIsPlaying } from "./jotai/useJotaiIsPlaying";
 import { useJotaiSongName } from "./jotai/useJotaiSongName";
-import { MusicSlider } from "./MusicSlider";
 
 export const Player: FC<StackProps> = ({ ...stackProps }) => {
   const { togglePlay } = useTogglePlay();
@@ -25,7 +24,6 @@ export const Player: FC<StackProps> = ({ ...stackProps }) => {
             <Text fontSize={"sm"}>{artistName}</Text>
           </HStack>
         </HStack>
-        <MusicSlider />
       </Stack>
       <Hooks />
     </>
