@@ -30,9 +30,11 @@ export const Replies: FC<{
   return (
     <>
       <chakra.button onClick={onOpen}>
-        <HStack>
-          <Icon as={BiCommentDetail} />
-          <Text>{getReplies(post.id).length}</Text>
+        <HStack spacing={0.5}>
+          <Icon as={BiCommentDetail} fontSize={"md"} />
+          <Text fontSize={"sm"} lineHeight={1} pb={0.5}>
+            {getReplies(post.id).length}
+          </Text>
         </HStack>
       </chakra.button>
       <Drawer isOpen={isOpen} onClose={onClose} size={"sm"}>
@@ -58,18 +60,11 @@ export const Replies: FC<{
                   top: 0,
                   zIndex: 1,
                   borderRadius: 0,
-                  boxShadow: 0,
                 }}
               />
               <Stack overflow={"auto"} p={4}>
                 {getReplies(post.id).map((reply) => (
-                  <Post
-                    key={reply.id}
-                    post={reply}
-                    stackProps={{
-                      boxShadow: "sm",
-                    }}
-                  />
+                  <Post key={reply.id} post={reply} />
                 ))}
               </Stack>
               <RepliesInput bottom={0} parentPostId={post.id} pos={"sticky"} />

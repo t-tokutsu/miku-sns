@@ -28,15 +28,10 @@ export const Layout: FC<{
           </Stack>
         </Box>
         {/* メインエリア */}
-        <Box
-          bgColor={"white"}
-          bgImage={"radial-gradient(#888 10%, transparent 10%)"}
-          bgSize={"20px 20px"}
-          pos={"relative"}
-        >
+        <Box bg={"#f5f7fa"} pos={"relative"}>
           <Box maxH={"100vh"} overflow={"auto"}>
             <Box>{children}</Box>
-            <Box bottom={4} m={4} pos={"sticky"}>
+            <Box bottom={2} m={2} pos={"sticky"}>
               <Player />
             </Box>
           </Box>

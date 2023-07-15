@@ -9,7 +9,7 @@ export const Posts: FC = () => {
   const mainPosts = posts.filter(({ parentPostId }) => !parentPostId);
   return (
     <>
-      <Stack maxW={"640px"} mx={"auto"}>
+      <Stack maxW={"640px"} mx={"auto"} p={2}>
         {mainPosts.map((post) => (
           <Post key={post.id} post={post} />
         ))}

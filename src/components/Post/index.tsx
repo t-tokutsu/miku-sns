@@ -5,6 +5,7 @@ import {
   Text,
   StackProps,
   Spacer,
+  Box,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
 import { FC } from "react";
@@ -19,30 +20,43 @@ export const Post: FC<{
 }> = ({ post, stackProps }) => {
   const { id, accountId, date, content } = post;
   return (
-    <HStack
-      alignItems={"flex-start"}
-      backdropFilter={"blur(12px)"}
-      bg={"rgba(240,255,255,.75)"}
-      borderRadius={12}
-      boxShadow={"md"}
-      justifySelf={"stretch"}
-      key={id}
-      p={4}
-      {...stackProps}
+    <Box
+      bg={
+        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
+      }
+      borderRadius={8}
+      p={0.5}
     >
-      <Avatar size={"sm"} />
-      <Stack w={"full"}>
-        <HStack>
-          <Text>{accountData[accountId].name}</Text>
-          <Spacer />
-          <Text>{format(date, "yyyy/MM/dd")}</Text>
-        </HStack>
-        <Text whiteSpace={"pre"}>{content}</Text>
-        <HStack spacing={4}>
-          <Likes post={post} />
-          <Replies post={post} />
-        </HStack>
-      </Stack>
-    </HStack>
+      <HStack
+        alignItems={"flex-start"}
+        backdropFilter={"blur(12px)"}
+        bg={"white"}
+        borderRadius={6}
+        justifySelf={"stretch"}
+        key={id}
+        p={3}
+        {...stackProps}
+      >
+        <Avatar size={"sm"} />
+        <Stack spacing={1} w={"full"}>
+          <HStack>
+            <Text fontSize={"md"} fontWeight={"bold"}>
+              {accountData[accountId].name}
+            </Text>
+            <Spacer />
+            <Text fontSize={"sm"}>{format(date, "yyyy/MM/dd")}</Text>
+          </HStack>
+          <Stack>
+            <Text fontSize={"sm"} whiteSpace={"pre"}>
+              {content}
+            </Text>
+            <HStack spacing={4}>
+              <Likes post={post} />
+              <Replies post={post} />
+            </HStack>
+          </Stack>
+        </Stack>
+      </HStack>
+    </Box>
   );
 };

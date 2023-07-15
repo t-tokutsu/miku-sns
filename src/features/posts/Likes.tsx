@@ -31,9 +31,11 @@ export const Likes: FC<{
         })
       }
     >
-      <HStack>
-        <Icon as={isLiked ? BsHeartFill : BsHeart} />
-        <Text>{likeAccountIds.length}</Text>
+      <HStack spacing={1}>
+        <Icon as={isLiked ? BsHeartFill : BsHeart} fontSize={"sm"} />
+        <Text fontSize={"sm"} lineHeight={1} pb={0.5}>
+          {likeAccountIds.length}
+        </Text>
       </HStack>
     </chakra.button>
   );

@@ -18,14 +18,15 @@ export const PostButton: FC = () => {
     <>
       <IconButton
         aria-label={"ポストする"}
+        bg={"linear-gradient(to top, #30cfd0 0%, #330867 100%)"}
         borderRadius={"full"}
-        bottom={7}
-        boxShadow={"md"}
-        colorScheme={"teal"}
+        bottom={16}
+        color={"white"}
+        fontSize={"xl"}
         icon={<BiCommentAdd />}
         onClick={onOpen}
         pos={"fixed"}
-        right={6}
+        right={4}
         size={"lg"}
       />
       <Modal isOpen={isOpen} onClose={onClose}>

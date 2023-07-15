@@ -15,25 +15,35 @@ export const Player: FC<StackProps> = ({ ...stackProps }) => {
   return (
     <>
       <Stack
-        backdropFilter={"blur(3px)"}
         bg={
-          "linear-gradient(90deg,rgba(255,255,255,.95) 15.59%,rgba(255,255,255,.55) 44.64%,rgba(255,255,255,.5) 100%)"
+          "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
         }
-        borderRadius={12}
-        boxShadow={"xl"}
-        p={4}
+        borderRadius={8}
+        p={1}
         {...stackProps}
       >
-        <HStack>
+        <HStack spacing={0}>
           <IconButton
             aria-label={isPlaying ? "停止" : "再生"}
-            fontSize={"2xl"}
+            bg={"none"}
+            color={"white"}
+            fontSize={"3xl"}
             icon={isPlaying ? <MdPause /> : <MdPlayArrow />}
             onClick={togglePlay}
           />
-          <HStack>
-            <Text fontWeight={"bold"}>{songName}</Text>
-            <Text fontSize={"sm"}>{artistName}</Text>
+          <HStack
+            color={"white"}
+            css={{
+              WebkitLineClamp: 1,
+              WebkitBoxOrient: "vertical",
+              display: "-webkit-box",
+            }}
+            overflow={"hidden"}
+          >
+            <Text fontSize={"sm"} fontWeight={"bold"}>
+              {songName}
+            </Text>
+            <Text fontSize={"xs"}>{artistName}</Text>
           </HStack>
         </HStack>
       </Stack>
