@@ -3,9 +3,9 @@ import {
   Avatar,
   Stack,
   Text,
-  StackProps,
   Spacer,
   Box,
+  BoxProps,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
 import { FC } from "react";
@@ -16,8 +16,9 @@ import { Replies } from "../../features/posts/Replies";
 
 export const Post: FC<{
   post: TypePost;
-  stackProps?: StackProps;
-}> = ({ post, stackProps }) => {
+  boxProps?: BoxProps;
+  isActive?: boolean;
+}> = ({ post, boxProps, isActive = false }) => {
   const { id, accountId, date, content } = post;
   return (
     <Box
@@ -26,16 +27,16 @@ export const Post: FC<{
       }
       borderRadius={8}
       p={0.5}
+      {...boxProps}
     >
       <HStack
         alignItems={"flex-start"}
         backdropFilter={"blur(12px)"}
-        bg={"white"}
+        bg={!isActive ? "white" : undefined}
         borderRadius={6}
         justifySelf={"stretch"}
         key={id}
         p={3}
-        {...stackProps}
       >
         <Avatar size={"sm"} />
         <Stack spacing={1} w={"full"}>
@@ -52,7 +53,7 @@ export const Post: FC<{
             </Text>
             <HStack spacing={4}>
               <Likes post={post} />
-              <Replies post={post} />
+              <Replies isActive={isActive} post={post} />
             </HStack>
           </Stack>
         </Stack>

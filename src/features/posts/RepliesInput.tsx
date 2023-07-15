@@ -1,4 +1,10 @@
-import { IconButton, Stack, StackProps, Textarea } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  IconButton,
+  StackProps,
+  Textarea,
+} from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { useJotaiPosts } from "./useJotaiPosts";
@@ -12,23 +18,34 @@ export const RepliesInput: FC<
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
-    <Stack
-      alignItems={"flex-end"}
-      backdropFilter={"blur(12px)"}
-      bg={"rgba(255,255,255,.75)"}
-      p={4}
+    <HStack
+      bg={
+        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
+      }
+      p={1}
+      spacing={1}
       {...stackProps}
     >
-      <Textarea
-        onChange={(e) => {
-          setContent(e.target.value);
-        }}
-        placeholder={"ポスト内容"}
-        value={content}
-      />
+      <Box borderRadius={8} p={0.5} w={"full"}>
+        <Textarea
+          bg={"white"}
+          borderWidth={0}
+          fontSize={"sm"}
+          h={"48px"}
+          minH={"auto"}
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
+          p={2}
+          placeholder={"こんなことがあったよ！"}
+          value={content}
+        />
+      </Box>
       <IconButton
-        aria-label={"送信する"}
-        fontSize={"2xl"}
+        aria-label={"ポストする"}
+        bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}
+        color={"white"}
+        fontSize={"xl"}
         icon={<FiSend />}
         onClick={() => {
           setPosts((draft) => {
@@ -41,8 +58,10 @@ export const RepliesInput: FC<
               parentPostId,
             });
           });
+          setContent("");
         }}
+        size={"lg"}
       />
-    </Stack>
+    </HStack>
   );
 };
