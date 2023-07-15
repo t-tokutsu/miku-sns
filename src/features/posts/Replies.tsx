@@ -2,7 +2,6 @@ import {
   Drawer,
   useDisclosure,
   DrawerBody,
-  DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
@@ -12,9 +11,11 @@ import {
   Text,
   Box,
   SimpleGrid,
+  IconButton,
 } from "@chakra-ui/react";
 import { FC } from "react";
 import { BiCommentDetail } from "react-icons/bi";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import { Post } from "../../components/Post";
 import { TypePost } from "./data/posts";
 import { RepliesInput } from "./RepliesInput";
@@ -37,8 +38,14 @@ export const Replies: FC<{
       <Drawer isOpen={isOpen} onClose={onClose} size={"sm"}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>返信</DrawerHeader>
+          <DrawerHeader>
+            <IconButton
+              aria-label={"戻る"}
+              fontSize={"2xl"}
+              icon={<IoMdArrowRoundBack />}
+              onClick={onClose}
+            />
+          </DrawerHeader>
           <DrawerBody p={0}>
             <SimpleGrid gridTemplateRows={"auto 1fr auto"} h={"full"}>
               <Post

@@ -11,19 +11,23 @@ export const Layout: FC<{
     <>
       <SimpleGrid alignItems={"stretch"} gridTemplateColumns={"auto 1fr"}>
         {/* メニューエリア */}
-        <Stack bg={"green.100"} w={"200px"}>
-          <Box>ロゴ</Box>
-          <Stack>
-            <Box>メニュー</Box>
-            <Box>メニュー</Box>
-            <Box>メニュー</Box>
-            <Box>メニュー</Box>
+        <Box bg={"green.100"} w={"200px"}>
+          <Stack bottom={0} pos={"sticky"} top={0}>
+            <Box>ロゴ</Box>
+            <Stack>
+              <Box>メニュー</Box>
+              <Box>メニュー</Box>
+              <Box>メニュー</Box>
+              <Box>メニュー</Box>
+            </Stack>
           </Stack>
-        </Stack>
+        </Box>
         {/* メインエリア */}
         <Box bg={"red.100"} minH={"100vh"} pos={"relative"}>
           <Box>{children}</Box>
-          <Player bottom={4} left={4} pos={"absolute"} right={4} />
+          <Box bottom={4} m={4} pos={"sticky"}>
+            <Player />
+          </Box>
         </Box>
         <PostButton />
       </SimpleGrid>

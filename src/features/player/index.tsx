@@ -1,4 +1,4 @@
-import { HStack, Icon, Stack, StackProps, Text } from "@chakra-ui/react";
+import { HStack, IconButton, Stack, StackProps, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import { MdPlayArrow, MdPause } from "react-icons/md";
 import { Hooks } from "./Hooks";
@@ -16,9 +16,12 @@ export const Player: FC<StackProps> = ({ ...stackProps }) => {
     <>
       <Stack bg={"blue.100"} borderRadius={4} p={4} {...stackProps}>
         <HStack>
-          <HStack as={"button"} onClick={togglePlay}>
-            <Icon as={isPlaying ? MdPause : MdPlayArrow} fontSize={36} />
-          </HStack>
+          <IconButton
+            aria-label={isPlaying ? "停止" : "再生"}
+            fontSize={"2xl"}
+            icon={isPlaying ? <MdPause /> : <MdPlayArrow />}
+            onClick={togglePlay}
+          />
           <HStack>
             <Text fontWeight={"bold"}>{songName}</Text>
             <Text fontSize={"sm"}>{artistName}</Text>

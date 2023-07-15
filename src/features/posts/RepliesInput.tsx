@@ -1,5 +1,6 @@
-import { Button, Stack, StackProps, Textarea } from "@chakra-ui/react";
+import { IconButton, Stack, StackProps, Textarea } from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
+import { FiSend } from "react-icons/fi";
 import { useJotaiPosts } from "./useJotaiPosts";
 
 export const RepliesInput: FC<
@@ -11,7 +12,7 @@ export const RepliesInput: FC<
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
-    <Stack {...stackProps}>
+    <Stack alignItems={"flex-end"} p={4} {...stackProps}>
       <Textarea
         onChange={(e) => {
           setContent(e.target.value);
@@ -19,7 +20,10 @@ export const RepliesInput: FC<
         placeholder={"ポスト内容"}
         value={content}
       />
-      <Button
+      <IconButton
+        aria-label={"送信する"}
+        fontSize={"2xl"}
+        icon={<FiSend />}
         onClick={() => {
           setPosts((draft) => {
             draft.unshift({
@@ -32,9 +36,7 @@ export const RepliesInput: FC<
             });
           });
         }}
-      >
-        ポストする
-      </Button>
+      />
     </Stack>
   );
 };
