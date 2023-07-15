@@ -9,9 +9,9 @@ import {
   chakra,
   HStack,
   Text,
-  Box,
-  SimpleGrid,
   IconButton,
+  Stack,
+  Box,
 } from "@chakra-ui/react";
 import { FC } from "react";
 import { BiCommentDetail } from "react-icons/bi";
@@ -39,30 +39,41 @@ export const Replies: FC<{
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader>
-            <IconButton
-              aria-label={"戻る"}
-              fontSize={"2xl"}
-              icon={<IoMdArrowRoundBack />}
-              onClick={onClose}
-            />
+            <HStack>
+              <IconButton
+                aria-label={"戻る"}
+                fontSize={"2xl"}
+                icon={<IoMdArrowRoundBack />}
+                onClick={onClose}
+              />
+              <Text>返信欄</Text>
+            </HStack>
           </DrawerHeader>
           <DrawerBody p={0}>
-            <SimpleGrid gridTemplateRows={"auto 1fr auto"} h={"full"}>
+            <Box h={"full"}>
               <Post
                 post={post}
                 stackProps={{
                   pos: "sticky",
                   top: 0,
                   zIndex: 1,
+                  borderRadius: 0,
+                  boxShadow: 0,
                 }}
               />
-              <Box overflow={"auto"}>
+              <Stack overflow={"auto"} p={4}>
                 {getReplies(post.id).map((reply) => (
-                  <Post key={reply.id} post={reply} />
+                  <Post
+                    key={reply.id}
+                    post={reply}
+                    stackProps={{
+                      boxShadow: "sm",
+                    }}
+                  />
                 ))}
-              </Box>
-              <RepliesInput parentPostId={post.id} />
-            </SimpleGrid>
+              </Stack>
+              <RepliesInput bottom={0} parentPostId={post.id} pos={"sticky"} />
+            </Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

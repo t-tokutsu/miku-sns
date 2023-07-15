@@ -19,7 +19,8 @@ export const PostButton: FC = () => {
       <IconButton
         aria-label={"ポストする"}
         borderRadius={"full"}
-        bottom={6}
+        bottom={7}
+        boxShadow={"md"}
         colorScheme={"teal"}
         icon={<BiCommentAdd />}
         onClick={onOpen}

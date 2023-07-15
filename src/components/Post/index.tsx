@@ -21,9 +21,10 @@ export const Post: FC<{
   return (
     <HStack
       alignItems={"flex-start"}
-      bg={"white"}
-      borderBottomColor={"blackAlpha.700"}
-      borderBottomWidth={1}
+      backdropFilter={"blur(12px)"}
+      bg={"rgba(240,255,255,.75)"}
+      borderRadius={12}
+      boxShadow={"md"}
       justifySelf={"stretch"}
       key={id}
       p={4}

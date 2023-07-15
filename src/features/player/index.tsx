@@ -14,7 +14,16 @@ export const Player: FC<StackProps> = ({ ...stackProps }) => {
   const { songName } = useJotaiSongName();
   return (
     <>
-      <Stack bg={"blue.100"} borderRadius={4} p={4} {...stackProps}>
+      <Stack
+        backdropFilter={"blur(3px)"}
+        bg={
+          "linear-gradient(90deg,rgba(255,255,255,.95) 15.59%,rgba(255,255,255,.55) 44.64%,rgba(255,255,255,.5) 100%)"
+        }
+        borderRadius={12}
+        boxShadow={"xl"}
+        p={4}
+        {...stackProps}
+      >
         <HStack>
           <IconButton
             aria-label={isPlaying ? "停止" : "再生"}

@@ -12,7 +12,13 @@ export const RepliesInput: FC<
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
-    <Stack alignItems={"flex-end"} p={4} {...stackProps}>
+    <Stack
+      alignItems={"flex-end"}
+      backdropFilter={"blur(12px)"}
+      bg={"rgba(255,255,255,.75)"}
+      p={4}
+      {...stackProps}
+    >
       <Textarea
         onChange={(e) => {
           setContent(e.target.value);
