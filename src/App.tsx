@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Posts } from "./features/posts";
-import { Layout } from "./layout/Layout";
+import { Layout } from "./layout";
 
 /** @package */
 export const App: FC = () => {
