@@ -149,7 +149,7 @@ export const useUpdateJotaiPosts = () => {
                   });
                 });
                 toast({
-                  duration: 4000,
+                  duration: 2000,
                   position: "top",
                   isClosable: true,
                   render: ({ onClose }) => (
