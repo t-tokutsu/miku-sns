@@ -1,5 +1,6 @@
-import { Button, Stack, Textarea } from "@chakra-ui/react";
+import { Box, HStack, IconButton, Stack, Textarea } from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
+import { FiSend } from "react-icons/fi";
 import { useJotaiPosts } from "../posts/useJotaiPosts";
 
 export const PostModalInner: FC<{
@@ -10,29 +11,47 @@ export const PostModalInner: FC<{
   const uuid = useId();
   return (
     <Stack>
-      <Textarea
-        onChange={(e) => {
-          setContent(e.target.value);
-        }}
-        placeholder={"ポスト内容"}
-        value={content}
-      />
-      <Button
-        onClick={() => {
-          setPosts((draft) => {
-            draft.unshift({
-              id: uuid,
-              content,
-              date: new Date(),
-              accountId: "1",
-              likeAccountIds: ["2"],
-            });
-          });
-          onClose();
-        }}
+      <Box
+        bg={
+          "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
+        }
+        borderRadius={8}
+        p={0.5}
       >
-        ポストする
-      </Button>
+        <Textarea
+          bg={"white"}
+          borderWidth={0}
+          minH={"160px"}
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
+          p={2}
+          placeholder={"こんなことがあったよ！"}
+          value={content}
+        />
+      </Box>
+      <HStack justifyContent={"flex-end"}>
+        <IconButton
+          aria-label={"ポストする"}
+          bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}
+          color={"white"}
+          fontSize={"xl"}
+          icon={<FiSend />}
+          onClick={() => {
+            setPosts((draft) => {
+              draft.unshift({
+                id: uuid,
+                content,
+                date: new Date(),
+                accountId: "1",
+                likeAccountIds: ["2"],
+              });
+            });
+            onClose();
+          }}
+          size={"lg"}
+        />
+      </HStack>
     </Stack>
   );
 };
