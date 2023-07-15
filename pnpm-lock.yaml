@@ -41,6 +41,9 @@ dependencies:
   react-use:
     specifier: ^17.4.0
     version: 17.4.0(react-dom@18.2.0)(react@18.2.0)
+  react-use-scroll-direction:
+    specifier: ^0.1.0
+    version: 0.1.0(react@18.2.0)
   textalive-app-api:
     specifier: ^0.3.2
     version: 0.3.2
@@ -3186,6 +3189,12 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
+  /history@5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+    dependencies:
+      '@babel/runtime': 7.22.6
+    dev: false
+
   /hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
@@ -3868,6 +3877,16 @@ packages:
     dependencies:
       react: 18.2.0
       tslib: 2.6.0
+    dev: false
+
+  /react-use-scroll-direction@0.1.0(react@18.2.0):
+    resolution: {integrity: sha512-dOEC+rniLzeJLD5gaPhXUNp7Hd2uKqW4f246FJkCW9SS2pqIKEqBu89jxhXfaf27Vemn/UNBtNSsguDVZo7qPg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      history: 5.3.0
+      react: 18.2.0
     dev: false
 
   /react-use@17.4.0(react-dom@18.2.0)(react@18.2.0):
