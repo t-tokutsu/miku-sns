@@ -106,4 +106,11 @@ export const postsData: TypePost[] = [
     date: new Date(),
     content: "メインスレッドです",
   },
+  {
+    id: "license_miku",
+    accountId: "license",
+    date: new Date(),
+    content:
+      "「初音ミク」はクリプトン・フューチャー・メディア株式会社の著作物です。\n© Crypton Future Media, INC. www.piapro.net",
+  },
 ];

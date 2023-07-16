@@ -4,9 +4,6 @@ type TypeAccount = {
 };
 
 export const accountData = {
-  // TODO: 以下のライセンス表記を追記する
-  // 「初音ミク」はクリプトン・フューチャー・メディア株式会社の著作物です。
-  // © Crypton Future Media, INC. www.piapro.net
   miku: {
     name: "初音ミク@その名はもちろん",
     description:
@@ -28,6 +25,10 @@ export const accountData = {
   "3": {
     name: "Carol",
     description: "私はマルマル",
+  },
+  license: {
+    name: "ライセンスbot",
+    description: "記載が必要なライセンス文を投稿するbotです。",
   },
 } as const satisfies {
   [id: string]: TypeAccount;
