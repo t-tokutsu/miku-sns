@@ -25,12 +25,14 @@
     "react-use": "^17.4.0",
     "react-use-scroll-direction": "^0.1.0",
     "textalive-app-api": "^0.3.2",
+    "uuid": "^9.0.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
     "@chakra-ui/styled-system": "^2.9.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
+    "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react": "^4.0.0",

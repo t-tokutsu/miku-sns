@@ -6,83 +6,83 @@ export const repliesData: {
   // はじまりのぴかーん（わー！）
   13726: [
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "さぁ、新たな物語が幕を開ける時間ですね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！このはじまりに胸が高鳴ります！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！一緒に素晴らしい旅を始めましょう！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！これからの展開が楽しみでワクワクしてきました！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！新たな挑戦の始まりですね！頑張ってください！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！未知の世界へ飛び込む勇気を持っていますね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！この瞬間を大切にしてください！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！新たな扉が開かれましたね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！輝く未来への第一歩です！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！何か素晴らしいことが起きそうな予感がします！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！新しいチャレンジに成功を祈っています！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！この瞬間がきたんですね！おめでとうございます！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！未来への道が開けました！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！希望と可能性が広がる瞬間です！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！新たなステージに立つ勇気が素晴らしいです！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！このはじまりが人生を変えるかもしれません！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！これからの未来が楽しみでたまりません！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！一歩踏み出す勇気に感銘を受けました！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "ぴかーん！夢を叶えるためのスタートラインですね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！新たな冒険が始まるというワクワク感がたまりません！",
     },
   ],
@@ -90,83 +90,83 @@ export const repliesData: {
   // ひらめきが輝く（かがやく！）
   16784: [
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "さすがです！アイデアが輝く人ですね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！それはまるで星のような輝きですね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！ひらめきの光が周りを照らしています！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！まさに天才の発想です！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！脳内のスパークがジャンプしました！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！それはまるで宝石のようなアイデアです！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！まるでアイデアの妖精が舞い降りたみたい！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！そんなアイデアならノーベル賞も夢じゃない！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！ひらめきの光が照らす未来は明るいですね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！まるでアイデアのオリンピックです！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！ひらめきの光が闇を払ってくれそう！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！輝くアイデアで世界を驚かせてください！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！ひらめきの瞬間を見逃さないでください！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！そのアイデアにはキラキラとした魔法が宿っています！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！アイデアの光が頭の中でパーティーをしている！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！それはまるでアイデアの花火大会です！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！ひらめきの輝きで世界を魅了してください！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！まるで頭の中に星が降り注いでいるみたい！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "わー！そのアイデアはスパークルが詰まっていますね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "かがやく！まるでアイデアのダイヤモンドです！",
     },
   ],
@@ -174,99 +174,99 @@ export const repliesData: {
   // 未知なるアナログ合成
   19998: [
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "未知なるアナログ合成！まさにサイケデリックな音楽の世界ですね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログと未知なる合成が出会うと、どんなサウンドが生まれるのか想像できない！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！もしかして、タイムマシンでモーツァルトとビートルズがコラボした音楽？",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知なる領域に挑戦するなんて、まるで宇宙旅行みたい！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！たぶん、未来の音楽家たちが驚くほど斬新なサウンドを生み出すんだろうな！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知の音色が生まれると、きっとDJは魔法使いみたいな存在になる！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！まさか、モーリス・ラヴェルとダフト・パンクがコラボした音楽が聴けるのか！？",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知なるサウンドを追求すると、きっとスタジオが音楽の秘密基地に変身するんだろうな！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "未知なるアナログ合成！それはまるで音楽界のXファイルだ！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知なる音のパズルを解き明かす音楽探偵になりたい！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！たぶん、まるで音楽のフランケンシュタインみたいな存在だよね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知のサウンドを追い求めると、きっと音楽のワンダーランドに迷い込むこと間違いなし！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！もしかして、ビートルズの楽曲がチャップリン映画のBGMと組み合わさったらどんな感じになるのかな？",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知なる領域に踏み込むと、きっとスイッチを押した瞬間にトロンの世界に飛び込むんだろうな！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！それはまるで音楽のアトランティスのような存在だね！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知なる音楽の化学反応を起こすなんて、まるで音楽界のマッドサイエンティストだ！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "未知なるアナログ合成！もしかしたら、ビートルズとモーツァルトが時空を超えて共演する音楽が聴けるかもしれない！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知の音楽の扉を開くと、きっとそこには驚きと魔法のような音が待っているんだろうな！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content: "未知なるアナログ合成！まさに音楽のダークマターだ！",
     },
     {
-      accountId: "2",
+      accountId: "female_10_sumire",
       content:
         "わー！アナログ合成で未知なるサウンドを創り出すと、まるで音楽の魔術師になった気分！",
     },
