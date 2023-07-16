@@ -34,7 +34,11 @@ export const Header: FC = () => {
         Miku SNS
       </Text>
       <Spacer />
-      <Avatar onClick={() => setAccountId(myAccountId)} size={"sm"} />
+      <Avatar
+        onClick={() => setAccountId(myAccountId)}
+        size={"sm"}
+        src={`/images/accounts/${myAccountId}/icon.png`}
+      />
     </HStack>
   );
 };

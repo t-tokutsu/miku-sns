@@ -49,7 +49,11 @@ export const Post: FC<{
           key={id}
           p={3}
         >
-          <Avatar onClick={() => setAccountId(accountId)} size={"sm"} />
+          <Avatar
+            onClick={() => setAccountId(accountId)}
+            size={"sm"}
+            src={`/images/accounts/${accountId}/icon.png`}
+          />
           <Stack spacing={1} w={"full"}>
             <HStack>
               <Text

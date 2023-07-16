@@ -42,7 +42,7 @@ export const Account: FC = () => {
           onClick={() => setAccountId(undefined)}
         />
         <HStack justifyContent={"center"}>
-          <Avatar size={"sm"} />
+          <Avatar size={"sm"} src={`/images/accounts/${accountId}/icon.png`} />
           <Text fontSize={"md"} fontWeight={"bold"} textAlign={"center"}>
             {name}
           </Text>
