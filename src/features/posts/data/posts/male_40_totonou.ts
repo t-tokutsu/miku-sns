@@ -5,7 +5,8 @@ import { TypePost } from ".";
 const postsArray: Pick<TypePost, "content" | "imageName">[] = [
   {
     content:
-      "今日もリモートワークで自宅オフィスにいます。気分はまるでカフェのよう♪",
+      "今日もリモートワークで自宅オフィスにいます。\nもはやカフェより自宅の方が快適になってきた😃",
+    imageName: "1.jpeg",
   },
   {
     content:
@@ -80,10 +81,11 @@ const postsArray: Pick<TypePost, "content" | "imageName">[] = [
 ];
 
 export const male_40_totonou: TypePost[] = postsArray.map(
-  ({ content }, index) => ({
+  ({ content, imageName }, index) => ({
     id: v4(),
     accountId: "male_40_totonou",
     date: subHours(new Date(), (index + 1) * 10),
     content,
+    imageName,
   })
 );

@@ -86,10 +86,11 @@ const postsArray: Pick<TypePost, "content" | "imageName">[] = [
 ];
 
 export const female_30_tokugawa: TypePost[] = postsArray.map(
-  ({ content }, index) => ({
+  ({ content, imageName }, index) => ({
     id: v4(),
     accountId: "female_30_tokugawa",
     date: subHours(new Date(), (index + 1) * 10),
     content,
+    imageName,
   })
 );

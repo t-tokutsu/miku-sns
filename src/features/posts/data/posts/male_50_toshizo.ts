@@ -5,6 +5,7 @@ import { TypePost } from ".";
 const postsArray: Pick<TypePost, "content" | "imageName">[] = [
   {
     content: "昨日のライブは最高だった！音楽の力で心が揺さぶられた瞬間だった。",
+    imageName: "1.jpeg",
   },
   {
     content:
@@ -70,10 +71,11 @@ const postsArray: Pick<TypePost, "content" | "imageName">[] = [
 ];
 
 export const male_50_toshizo: TypePost[] = postsArray.map(
-  ({ content }, index) => ({
+  ({ content, imageName }, index) => ({
     id: v4(),
     accountId: "male_50_toshizo",
     date: subHours(new Date(), (index + 1) * 10),
     content,
+    imageName,
   })
 );

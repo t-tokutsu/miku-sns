@@ -70,6 +70,8 @@ export const Post: FC<{
               <Center>
                 <chakra.img
                   alt=""
+                  borderRadius={8}
+                  loading={"lazy"}
                   maxH={isActive ? "200px" : "300px"}
                   src={`/images/accounts/${accountId}/posts/${imageName}`}
                 />
