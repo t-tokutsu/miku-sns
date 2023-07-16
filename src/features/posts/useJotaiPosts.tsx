@@ -2,8 +2,8 @@ import { Stack, Text, useToast } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
-import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../../jotai/useJotaiPlayer";
+import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import {
   accountData,
   accountIds,

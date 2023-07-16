@@ -19,13 +19,16 @@ export const Likes: FC<{
           const targetPost = draft.find(
             ({ id: draftPostId }) => draftPostId === id
           );
-          if (!targetPost?.likeAccountIds) return;
+          if (!targetPost) return;
           if (isLiked) {
-            targetPost.likeAccountIds = targetPost.likeAccountIds.filter(
+            targetPost.likeAccountIds = targetPost.likeAccountIds?.filter(
               (likeAccountId) => likeAccountId !== myAccountId
             );
           } else {
-            targetPost.likeAccountIds.push(myAccountId);
+            targetPost.likeAccountIds = [
+              ...(targetPost.likeAccountIds ?? []),
+              myAccountId,
+            ];
           }
         })
       }
@@ -33,7 +36,7 @@ export const Likes: FC<{
       <HStack spacing={1}>
         <Icon as={isLiked ? BsHeartFill : BsHeart} fontSize={"sm"} />
         <Text fontSize={"sm"} lineHeight={1} pb={0.5}>
-          {likeAccountIds?.length}
+          {likeAccountIds?.length ?? 0}
         </Text>
       </HStack>
     </chakra.button>
