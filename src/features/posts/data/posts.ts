@@ -6,9 +6,7 @@ export type TypePost = {
   accountId: TypeAccountId;
   date: Date;
   content: ReactNode;
-  images?: {
-    src: string;
-  }[];
+  hasImage?: boolean;
   likeAccountIds: TypeAccountId[];
   parentPostId?: string;
 };

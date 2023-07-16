@@ -7,6 +7,8 @@ import {
   Box,
   BoxProps,
   Collapse,
+  chakra,
+  Center,
 } from "@chakra-ui/react";
 import { FC, useLayoutEffect, useState } from "react";
 import { useJotaiAccountId } from "../../features/account/useJotaiAccountId";
@@ -22,7 +24,7 @@ export const Post: FC<{
   isActive?: boolean;
 }> = ({ post, boxProps, isActive = false }) => {
   const { setAccountId } = useJotaiAccountId();
-  const { id, accountId, date, content } = post;
+  const { id, accountId, date, content, hasImage } = post;
   const [isShow, setIsShow] = useState(isActive ? true : false);
   useLayoutEffect(() => {
     setTimeout(() => {
@@ -70,6 +72,15 @@ export const Post: FC<{
               <Text fontSize={"sm"} whiteSpace={"pre-wrap"}>
                 {content}
               </Text>
+              {hasImage && (
+                <Center>
+                  <chakra.img
+                    alt=""
+                    maxH={"400px"}
+                    src={`/images/posts/${id}.png`}
+                  />
+                </Center>
+              )}
               <HStack spacing={4}>
                 <Likes post={post} />
                 <Replies isActive={isActive} post={post} />

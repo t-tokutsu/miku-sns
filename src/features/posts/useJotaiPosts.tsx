@@ -19,6 +19,7 @@ const postsAtom = atomWithImmer<TypePost[]>([
     accountId: "1",
     date: new Date(),
     content: "メインスレッドです",
+    hasImage: true,
     likeAccountIds: [],
   },
   {
