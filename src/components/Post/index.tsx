@@ -8,24 +8,12 @@ import {
   BoxProps,
   Collapse,
 } from "@chakra-ui/react";
-import { differenceInSeconds, format } from "date-fns";
 import { FC, useLayoutEffect, useState } from "react";
 import { accountData } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
 import { Likes } from "../../features/posts/Likes";
 import { Replies } from "../../features/posts/Replies";
 import { PostDate } from "./PostDate";
-
-const formatDate = (date: Date): string => {
-  const differenceSeconds = differenceInSeconds(new Date(), date);
-  if (differenceSeconds < 60) {
-    return "たった今";
-  } else if (differenceSeconds < 60 * 60) {
-    return `${Math.floor(differenceSeconds / 60)}分前`;
-  } else {
-    return format(date, "yyyy/MM/dd HH:mm");
-  }
-};
 
 export const Post: FC<{
   post: TypePost;
