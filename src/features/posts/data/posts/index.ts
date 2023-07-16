@@ -2,6 +2,10 @@ import { ReactNode } from "react";
 import { v4 } from "uuid";
 import { TypeAccountId } from "../accounts";
 import { female_10_sumire } from "./female_10_sumire";
+import { female_20_aomori } from "./female_20_aomori";
+import { female_20_mint } from "./female_20_mint";
+import { female_30_tokugawa } from "./female_30_tokugawa";
+import { female_60_science } from "./female_60_science";
 import { male_10_yuta } from "./male_10_yuta";
 import { male_30_pain } from "./male_30_pain";
 import { male_40_totonou } from "./male_40_totonou";
@@ -41,5 +45,9 @@ export const postsData: TypePost[] = [
   ...male_40_totonou,
   ...male_50_toshizo,
   ...female_10_sumire,
+  ...female_20_aomori,
+  ...female_20_mint,
+  ...female_30_tokugawa,
+  ...female_60_science,
   ...postsArray,
 ].sort(({ date: dateA }, { date: dateB }) => Number(dateB) - Number(dateA));

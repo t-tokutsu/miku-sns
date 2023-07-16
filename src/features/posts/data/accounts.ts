@@ -29,7 +29,7 @@ export const accountData = {
   },
   male_50_toshizo: {
     name: "ハイパーキーボーディスト歳三",
-    description: "昔は事務所に所属していた",
+    description: "キーボードで俺にかなうやつはいない。",
   },
   // 女性
   female_10_sumire: {
@@ -48,7 +48,7 @@ export const accountData = {
     name: "徳川写実斎",
     description: "歴史とダムが好き",
   },
-  female_60_mint: {
+  female_60_science: {
     name: "理系おばあちゃん",
     description: "私はマルマル",
   },

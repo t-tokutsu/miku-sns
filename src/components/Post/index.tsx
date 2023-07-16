@@ -52,7 +52,7 @@ export const Post: FC<{
         <Stack spacing={1} w={"full"}>
           <HStack>
             <Text
-              fontSize={"md"}
+              fontSize={"sm"}
               fontWeight={"bold"}
               onClick={() => setAccountId(accountId)}
             >
