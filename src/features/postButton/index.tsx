@@ -9,12 +9,14 @@ import {
   Stack,
   useDisclosure,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { BiCommentAdd } from "react-icons/bi";
 import { PostModalInner } from "./PostModalInner";
 
 export const PostButton: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = useRef<HTMLTextAreaElement>(null);
+
   return (
     <>
       <IconButton
@@ -30,7 +32,12 @@ export const PostButton: FC = () => {
         right={4}
         size={"lg"}
       />
-      <Modal isCentered isOpen={isOpen} onClose={onClose}>
+      <Modal
+        initialFocusRef={initialRef}
+        isCentered
+        isOpen={isOpen}
+        onClose={onClose}
+      >
         <ModalOverlay />
         <ModalContent m={4} p={2}>
           <ModalCloseButton />
@@ -39,7 +46,7 @@ export const PostButton: FC = () => {
               ポスト
             </ModalHeader>
             <ModalBody p={0}>
-              <PostModalInner onClose={onClose} />
+              <PostModalInner initialRef={initialRef} onClose={onClose} />
             </ModalBody>
           </Stack>
         </ModalContent>

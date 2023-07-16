@@ -1,15 +1,15 @@
 import { Box, HStack, IconButton, Stack, Textarea } from "@chakra-ui/react";
-import { FC, useId, useState } from "react";
+import { FC, RefObject } from "react";
 import { FiSend } from "react-icons/fi";
-import { myAccountId } from "../posts/data/accounts";
-import { useJotaiPosts } from "../posts/useJotaiPosts";
+import { usePostWithKey } from "./usePostWithKey";
 
 export const PostModalInner: FC<{
   onClose: () => void;
-}> = ({ onClose }) => {
-  const { setPostWithLike } = useJotaiPosts();
-  const [content, setContent] = useState("");
-  const uuid = useId();
+  initialRef: RefObject<HTMLTextAreaElement>;
+}> = ({ onClose, initialRef }) => {
+  const { post, content, setContent } = usePostWithKey({
+    callBack: onClose,
+  });
   return (
     <Stack>
       <Box bg={"gradation.green"} borderRadius={8} p={0.5}>
@@ -23,6 +23,7 @@ export const PostModalInner: FC<{
           }}
           p={2}
           placeholder={"こんなことがあったよ！"}
+          ref={initialRef}
           value={content}
         />
       </Box>
@@ -33,17 +34,7 @@ export const PostModalInner: FC<{
           color={"white"}
           fontSize={"xl"}
           icon={<FiSend />}
-          onClick={() => {
-            setPostWithLike((draft) => {
-              draft.unshift({
-                id: uuid,
-                content,
-                date: new Date(),
-                accountId: myAccountId,
-              });
-            }, uuid);
-            onClose();
-          }}
+          onClick={post}
           size={"lg"}
         />
       </HStack>

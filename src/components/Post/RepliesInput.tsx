@@ -5,19 +5,20 @@ import {
   StackProps,
   Textarea,
 } from "@chakra-ui/react";
-import { FC, useId, useState } from "react";
+import { FC } from "react";
 import { FiSend } from "react-icons/fi";
-import { myAccountId } from "../../features/posts/data/accounts";
-import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
+import { usePostWithKey } from "../../features/postButton/usePostWithKey";
 
 export const RepliesInput: FC<
   {
     parentPostId: string;
   } & StackProps
 > = ({ parentPostId, ...stackProps }) => {
-  const { setPostWithLike } = useJotaiPosts();
-  const [content, setContent] = useState("");
-  const uuid = useId();
+  const { post, content, setContent } = usePostWithKey({
+    callBack: () => setContent(""),
+    parentPostId,
+  });
+
   return (
     <HStack bg={"gradation.green"} p={1} spacing={1} {...stackProps}>
       <Box borderRadius={8} p={0.5} w={"full"}>
@@ -41,19 +42,7 @@ export const RepliesInput: FC<
         color={"white"}
         fontSize={"xl"}
         icon={<FiSend />}
-        onClick={() => {
-          const targetId = `${uuid}_${Date.now()}`;
-          setPostWithLike((draft) => {
-            draft.unshift({
-              id: targetId,
-              content,
-              date: new Date(),
-              accountId: myAccountId,
-              parentPostId,
-            });
-          }, targetId);
-          setContent("");
-        }}
+        onClick={post}
         size={"lg"}
       />
     </HStack>
