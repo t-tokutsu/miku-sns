@@ -31,7 +31,7 @@ export const RepliesInput: FC<
         <Textarea
           bg={"white"}
           borderWidth={0}
-          fontSize={"sm"}
+          fontSize={"md"}
           h={"48px"}
           minH={"auto"}
           onChange={(e) => {

@@ -22,6 +22,7 @@ export const PostModalInner: FC<{
         <Textarea
           bg={"white"}
           borderWidth={0}
+          fontSize={"md"}
           minH={"160px"}
           onChange={(e) => {
             setContent(e.target.value);
