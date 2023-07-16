@@ -17,3 +17,7 @@ export const accountData = {
 };
 
 export type TypeAccountId = keyof typeof accountData;
+
+export const accountIds: TypeAccountId[] = Object.keys(
+  accountData
+) as TypeAccountId[];

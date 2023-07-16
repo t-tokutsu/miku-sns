@@ -4,7 +4,7 @@ import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../player/jotai/useJotaiPlayer";
-import { accountData } from "./data/accounts";
+import { accountData, accountIds } from "./data/accounts";
 import { TypePost } from "./data/posts";
 import { repliesData } from "./data/replies";
 
@@ -135,69 +135,75 @@ export const useUpdateJotaiPosts = () => {
           if (unit.contains(now)) {
             if (lastPhraseStartTime !== unit.startTime) {
               lastPhraseStartTime = unit.startTime;
-              console.log("unit.startTime", unit.startTime);
-              console.log("unit.text", unit.text);
               const targetId = `${unit.startTime}_${Date.now()}`;
-              setTimeout(() => {
-                setPosts((draft) => {
-                  draft.unshift({
-                    id: targetId,
-                    content: unit.text,
-                    date: new Date(),
-                    accountId: "1",
-                    likeAccountIds: ["2"],
-                  });
-                });
-                toast({
-                  duration: 2000,
-                  position: "top",
-                  isClosable: true,
-                  render: ({ onClose }) => (
-                    <Stack
-                      as={"a"}
-                      bg={
-                        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-                      }
-                      borderRadius={8}
-                      borderWidth={1}
-                      color={"white"}
-                      href={`#${targetId}`}
-                      onClick={() => {
-                        onClose();
-                      }}
-                      px={2}
-                      py={1}
-                      spacing={0}
-                      w={"full"}
-                    >
-                      <Text fontSize={"sm"} fontWeight={"bold"}>
-                        {accountData["1"].name}
-                      </Text>
-                      <Text fontSize={"sm"} fontWeight={"bold"}>
-                        {unit.text}
-                      </Text>
-                    </Stack>
-                  ),
-                });
 
-                const targetRepliesDatum = repliesData[unit.startTime] ?? [];
-                targetRepliesDatum.forEach((reply) => {
-                  setTimeout(() => {
-                    setPosts((draft) => {
-                      const targetPost = draft.find(
-                        ({ id }) => id === targetId
-                      );
-                      if (!targetPost) return;
-                      draft.push({
-                        ...reply,
-                        id: Date.now().toString(),
-                        date: new Date(),
-                        parentPostId: targetPost.id,
-                      });
-                    });
-                  }, getRandomNumber(1000, 5000));
+              setPosts((draft) => {
+                draft.unshift({
+                  id: targetId,
+                  content: unit.text,
+                  date: new Date(),
+                  accountId: "1",
+                  likeAccountIds: [],
                 });
-              }, 200);
+              });
+
+              accountIds.forEach((accountId) => {
+                setTimeout(() => {
+                  setPosts((draft) => {
+                    const targetPost = draft.find(({ id }) => id === targetId);
+                    if (!targetPost) return;
+                    targetPost.likeAccountIds.push(accountId);
+                  });
+                }, getRandomNumber(1000, 5000));
+              });
+
+              toast({
+                duration: 2000,
+                position: "top",
+                isClosable: true,
+                render: ({ onClose }) => (
+                  <Stack
+                    as={"a"}
+                    bg={
+                      "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
+                    }
+                    borderRadius={8}
+                    borderWidth={1}
+                    color={"white"}
+                    href={`#${targetId}`}
+                    onClick={() => {
+                      onClose();
+                    }}
+                    px={2}
+                    py={1}
+                    spacing={0}
+                    w={"full"}
+                  >
+                    <Text fontSize={"sm"} fontWeight={"bold"}>
+                      {accountData["1"].name}
+                    </Text>
+                    <Text fontSize={"sm"} fontWeight={"bold"}>
+                      {unit.text}
+                    </Text>
+                  </Stack>
+                ),
+              });
+
+              const targetRepliesDatum = repliesData[unit.startTime] ?? [];
+              targetRepliesDatum.forEach((reply) => {
+                setTimeout(() => {
+                  setPosts((draft) => {
+                    const targetPost = draft.find(({ id }) => id === targetId);
+                    if (!targetPost) return;
+                    draft.push({
+                      ...reply,
+                      id: Date.now().toString(),
+                      date: new Date(),
+                      parentPostId: targetPost.id,
+                    });
+                  });
+                }, getRandomNumber(1000, 5000));
+              });
             }
           }
         };
