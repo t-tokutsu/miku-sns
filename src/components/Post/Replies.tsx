@@ -16,10 +16,10 @@ import {
 import { FC } from "react";
 import { BiCommentDetail } from "react-icons/bi";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { Post } from "../../components/Post";
-import { TypePost } from "./data/posts";
+import { TypePost } from "../../features/posts/data/posts";
+import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 import { RepliesInput } from "./RepliesInput";
-import { useJotaiPosts } from "./useJotaiPosts";
+import { Post } from ".";
 
 /** @package */
 export const Replies: FC<{

@@ -6,7 +6,9 @@ export const Loading: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   usePlayerListener({
     onVideoReady: () => {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2 * 1000);
     },
   });
   return isLoading ? (

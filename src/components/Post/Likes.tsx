@@ -1,9 +1,9 @@
 import { HStack, Text, chakra, Icon } from "@chakra-ui/react";
 import { FC } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { TypeAccountId } from "./data/accounts";
-import { TypePost } from "./data/posts";
-import { useJotaiPosts } from "./useJotaiPosts";
+import { TypeAccountId } from "../../features/posts/data/accounts";
+import { TypePost } from "../../features/posts/data/posts";
+import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 
 export const Likes: FC<{
   post: TypePost;

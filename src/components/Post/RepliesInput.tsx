@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
 import { FiSend } from "react-icons/fi";
-import { useJotaiPosts } from "./useJotaiPosts";
+import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 
 export const RepliesInput: FC<
   {

@@ -11,9 +11,9 @@ import {
 import { FC, useLayoutEffect, useState } from "react";
 import { accountData } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
-import { Likes } from "../../features/posts/Likes";
-import { Replies } from "../../features/posts/Replies";
+import { Likes } from "./Likes";
 import { PostDate } from "./PostDate";
+import { Replies } from "./Replies";
 
 export const Post: FC<{
   post: TypePost;
