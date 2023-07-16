@@ -1,9 +1,12 @@
 import { Avatar, HStack, Spacer, Text } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import { useScrollDirection } from "react-use-scroll-direction";
+import { useJotaiAccountId } from "../features/account/useJotaiAccountId";
+import { myAccountId } from "../features/posts/data/accounts";
 
 export const Header: FC = () => {
   const { scrollDirection } = useScrollDirection();
+  const { setAccountId } = useJotaiAccountId();
   const [isShow, setIsShow] = useState(true);
 
   useEffect(() => {
@@ -31,7 +34,7 @@ export const Header: FC = () => {
         Miku SNS
       </Text>
       <Spacer />
-      <Avatar size={"sm"} />
+      <Avatar onClick={() => setAccountId(myAccountId)} size={"sm"} />
     </HStack>
   );
 };

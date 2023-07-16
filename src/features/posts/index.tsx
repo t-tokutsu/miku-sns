@@ -1,6 +1,9 @@
-import { Stack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { FC } from "react";
 import { Post } from "../../components/Post";
+import { Header } from "../../layout/Header";
+import { Player } from "../player";
+import { PostButton } from "../postButton";
 import { Hooks } from "./Hooks";
 import { useJotaiPosts } from "./useJotaiPosts";
 
@@ -9,11 +12,21 @@ export const Posts: FC = () => {
   const mainPosts = posts.filter(({ parentPostId }) => !parentPostId);
   return (
     <>
-      <Stack maxW={"640px"} mx={"auto"} p={2}>
-        {mainPosts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </Stack>
+      {/* ヘッダーエリア */}
+      <Header />
+      {/* メインエリア */}
+      <Box>
+        <Stack maxW={"640px"} mx={"auto"} p={2}>
+          {mainPosts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
+        </Stack>
+        <Box bottom={2} m={2} pos={"sticky"}>
+          <Player />
+        </Box>
+      </Box>
+      {/* 投稿ボタン */}
+      <PostButton />
       <Hooks />
     </>
   );

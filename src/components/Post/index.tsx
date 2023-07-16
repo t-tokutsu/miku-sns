@@ -9,6 +9,7 @@ import {
   Collapse,
 } from "@chakra-ui/react";
 import { FC, useLayoutEffect, useState } from "react";
+import { useJotaiAccountId } from "../../features/account/useJotaiAccountId";
 import { accountData } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
 import { Likes } from "./Likes";
@@ -20,6 +21,7 @@ export const Post: FC<{
   boxProps?: BoxProps;
   isActive?: boolean;
 }> = ({ post, boxProps, isActive = false }) => {
+  const { setAccountId } = useJotaiAccountId();
   const { id, accountId, date, content } = post;
   const [isShow, setIsShow] = useState(isActive ? true : false);
   useLayoutEffect(() => {
@@ -47,10 +49,14 @@ export const Post: FC<{
           key={id}
           p={3}
         >
-          <Avatar size={"sm"} />
+          <Avatar onClick={() => setAccountId(accountId)} size={"sm"} />
           <Stack spacing={1} w={"full"}>
             <HStack>
-              <Text fontSize={"md"} fontWeight={"bold"}>
+              <Text
+                fontSize={"md"}
+                fontWeight={"bold"}
+                onClick={() => setAccountId(accountId)}
+              >
                 {accountData[accountId].name}
               </Text>
               <Spacer />
