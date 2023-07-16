@@ -1,10 +1,10 @@
 import { Center, Text, VStack } from "@chakra-ui/react";
 import { FC } from "react";
 import { Triangle } from "react-loader-spinner";
-import { useJotaiIsPlayerLoadedAtom } from "../jotai/useJotaiPlayer";
+import { useJotaiIsPlayerLoaded } from "../jotai/useJotaiPlayer";
 
 export const Loading: FC = () => {
-  const { isPlayerLoaded } = useJotaiIsPlayerLoadedAtom();
+  const { isPlayerLoaded } = useJotaiIsPlayerLoaded();
   return isPlayerLoaded ? null : (
     <Center bg={"gradation.green"} inset={0} pos={"fixed"} zIndex={"overlay"}>
       <VStack spacing={8}>

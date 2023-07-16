@@ -13,14 +13,14 @@ export const useJotaiPlayer = () => {
 const isPlayerLoadedAtom = atom<boolean>(false);
 isPlayerLoadedAtom.debugLabel = "isPlayerLoadedAtom";
 
-export const useJotaiIsPlayerLoadedAtom = () => {
+export const useJotaiIsPlayerLoaded = () => {
   const [isPlayerLoaded, setIsPlayerLoaded] = useAtom(isPlayerLoadedAtom);
   return { isPlayerLoaded, setIsPlayerLoaded };
 };
 
 export const useUpdateJotaiPlayer = () => {
   const { player, setPlayer } = useJotaiPlayer();
-  const { setIsPlayerLoaded } = useJotaiIsPlayerLoadedAtom();
+  const { setIsPlayerLoaded } = useJotaiIsPlayerLoaded();
   const mediaElementRef = useRef<HTMLDivElement>(null);
 
   // playerの指定
