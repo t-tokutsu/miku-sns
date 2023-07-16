@@ -69,7 +69,7 @@ export const Post: FC<{
               <Center>
                 <chakra.img
                   alt=""
-                  maxH={"300px"}
+                  maxH={isActive ? "200px" : "300px"}
                   src={`/images/posts/${id}.png`}
                 />
               </Center>
