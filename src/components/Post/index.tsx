@@ -8,12 +8,24 @@ import {
   BoxProps,
   Collapse,
 } from "@chakra-ui/react";
-import { format } from "date-fns";
+import { differenceInSeconds, format } from "date-fns";
 import { FC, useLayoutEffect, useState } from "react";
 import { accountData } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
 import { Likes } from "../../features/posts/Likes";
 import { Replies } from "../../features/posts/Replies";
+import { PostDate } from "./PostDate";
+
+const formatDate = (date: Date): string => {
+  const differenceSeconds = differenceInSeconds(new Date(), date);
+  if (differenceSeconds < 60) {
+    return "たった今";
+  } else if (differenceSeconds < 60 * 60) {
+    return `${Math.floor(differenceSeconds / 60)}分前`;
+  } else {
+    return format(date, "yyyy/MM/dd HH:mm");
+  }
+};
 
 export const Post: FC<{
   post: TypePost;
@@ -21,7 +33,7 @@ export const Post: FC<{
   isActive?: boolean;
 }> = ({ post, boxProps, isActive = false }) => {
   const { id, accountId, date, content } = post;
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(isActive ? true : false);
   useLayoutEffect(() => {
     setTimeout(() => {
       setIsShow(true);
@@ -54,7 +66,7 @@ export const Post: FC<{
                 {accountData[accountId].name}
               </Text>
               <Spacer />
-              <Text fontSize={"sm"}>{format(date, "yyyy/MM/dd")}</Text>
+              <PostDate date={date} />
             </HStack>
             <Stack>
               <Text fontSize={"sm"} whiteSpace={"pre-wrap"}>
