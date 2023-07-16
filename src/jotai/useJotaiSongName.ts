@@ -1,5 +1,5 @@
 import { atom, useAtom } from "jotai";
-import { usePlayerListener } from "../hooks/usePlayerListener";
+import { usePlayerListener } from "../features/player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "./useJotaiPlayer";
 
 const songNameAtom = atom<string>("");

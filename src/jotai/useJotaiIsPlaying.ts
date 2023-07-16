@@ -1,5 +1,5 @@
 import { atom, useAtom } from "jotai";
-import { usePlayerListener } from "../hooks/usePlayerListener";
+import { usePlayerListener } from "../features/player/hooks/usePlayerListener";
 
 const isPlayingAtom = atom<boolean>(false);
 isPlayingAtom.debugLabel = "isPlayingAtom";

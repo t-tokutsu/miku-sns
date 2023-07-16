@@ -21,9 +21,7 @@ export const Posts: FC = () => {
             <Post key={post.id} post={post} />
           ))}
         </Stack>
-        <Box bottom={2} m={2} pos={"sticky"}>
-          <Player />
-        </Box>
+        <Player />
       </Box>
       {/* 投稿ボタン */}
       <PostButton />

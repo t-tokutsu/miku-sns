@@ -1,5 +1,5 @@
 import { atom, useAtom } from "jotai";
-import { usePlayerListener } from "../hooks/usePlayerListener";
+import { usePlayerListener } from "../features/player/hooks/usePlayerListener";
 
 const durationAtom = atom<number>(0);
 durationAtom.debugLabel = "durationAtom";

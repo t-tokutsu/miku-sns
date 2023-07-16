@@ -15,6 +15,7 @@ import { accountData } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
 import { Likes } from "./Likes";
 import { PostDate } from "./PostDate";
+import { PostPlayer } from "./PostPlayer";
 import { Replies } from "./Replies";
 
 export const Post: FC<{
@@ -23,7 +24,7 @@ export const Post: FC<{
   isActive?: boolean;
 }> = ({ post, boxProps, isActive = false }) => {
   const { setAccountId } = useJotaiAccountId();
-  const { id, accountId, date, content, hasImage } = post;
+  const { id, accountId, date, content, hasImage, hasPlayer } = post;
   return (
     <Box
       bg={
@@ -74,6 +75,7 @@ export const Post: FC<{
                 />
               </Center>
             )}
+            {hasPlayer && <PostPlayer />}
             <HStack spacing={4}>
               <Likes post={post} />
               <Replies isActive={isActive} post={post} />

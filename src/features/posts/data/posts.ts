@@ -32,6 +32,7 @@ export const postsData: TypePost[] = [
     accountId: "miku",
     date: new Date(),
     content: "聴いてね！！",
+    hasPlayer: true,
   },
   {
     id: "3",

@@ -1,6 +1,6 @@
-import { useJotaiIsPlaying } from "../jotai/useJotaiIsPlaying";
-import { useJotaiPlayer } from "../jotai/useJotaiPlayer";
-import { useJotaiPosition } from "../jotai/useJotaiPosition";
+import { useJotaiIsPlaying } from "../../../jotai/useJotaiIsPlaying";
+import { useJotaiPlayer } from "../../../jotai/useJotaiPlayer";
+import { useJotaiPosition } from "../../../jotai/useJotaiPosition";
 
 export const useTogglePlay = () => {
   const { isPlaying } = useJotaiIsPlaying();

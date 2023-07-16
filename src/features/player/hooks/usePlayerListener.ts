@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react";
 import { PlayerListener } from "textalive-app-api";
-import { useJotaiPlayer } from "../jotai/useJotaiPlayer";
+import { useJotaiPlayer } from "../../../jotai/useJotaiPlayer";
 
 export const usePlayerListener = (listener: PlayerListener) => {
   const { player } = useJotaiPlayer();

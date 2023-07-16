@@ -5,9 +5,9 @@ import {
   SliderThumb,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import { useJotaiDuration } from "./jotai/useJotaiDuration";
-import { useJotaiPlayer } from "./jotai/useJotaiPlayer";
-import { useJotaiPosition } from "./jotai/useJotaiPosition";
+import { useJotaiDuration } from "../../jotai/useJotaiDuration";
+import { useJotaiPlayer } from "../../jotai/useJotaiPlayer";
+import { useJotaiPosition } from "../../jotai/useJotaiPosition";
 
 /** @package */
 export const MusicSlider: FC = () => {
