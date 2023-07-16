@@ -2,7 +2,7 @@ import { subHours } from "date-fns";
 import { v4 } from "uuid";
 import { TypePost } from ".";
 
-const postsArray: Pick<TypePost, "content">[] = [
+const postsArray: Pick<TypePost, "content" | "imageName">[] = [
   {
     content:
       "私は60代のおばあちゃんだけど、理系の頭脳はまだまだ健在！流行りの技術やトレンドについていくのが楽しいんだよ。",

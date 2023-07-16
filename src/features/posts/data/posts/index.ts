@@ -16,7 +16,7 @@ export type TypePost = {
   accountId: TypeAccountId;
   date: Date;
   content: ReactNode;
-  hasImage?: boolean;
+  imageName?: string;
   hasPlayer?: boolean;
   likeAccountIds?: TypeAccountId[];
   parentPostId?: string;

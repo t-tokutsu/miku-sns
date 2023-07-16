@@ -2,7 +2,7 @@ import { subHours } from "date-fns";
 import { v4 } from "uuid";
 import { TypePost } from ".";
 
-const postsArray: Pick<TypePost, "content">[] = [
+const postsArray: Pick<TypePost, "content" | "imageName">[] = [
   { content: "今日の仕事は忙しかったけど、一杯のビールで疲れが吹っ飛んだ！" },
   {
     content:

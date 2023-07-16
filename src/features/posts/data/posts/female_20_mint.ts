@@ -2,7 +2,7 @@ import { subHours } from "date-fns";
 import { v4 } from "uuid";
 import { TypePost } from ".";
 
-const postsArray: Pick<TypePost, "content">[] = [
+const postsArray: Pick<TypePost, "content" | "imageName">[] = [
   {
     content:
       "大学院生の地理学専攻、まったりと研究に励んでるんだけど、チョコミントアイスは最高の癒しアイテム！ストレスフリーになれる味だよね。",

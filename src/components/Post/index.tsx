@@ -24,7 +24,7 @@ export const Post: FC<{
   isActive?: boolean;
 }> = ({ post, boxProps, isActive = false }) => {
   const { setAccountId } = useJotaiAccountId();
-  const { id, accountId, date, content, hasImage, hasPlayer } = post;
+  const { id, accountId, date, content, imageName, hasPlayer } = post;
   return (
     <Box
       bg={"gradation.green"}
@@ -66,12 +66,12 @@ export const Post: FC<{
               {content}
             </Text>
             {/* 画像 */}
-            {hasImage && (
+            {imageName && (
               <Center>
                 <chakra.img
                   alt=""
                   maxH={isActive ? "200px" : "300px"}
-                  src={`/images/posts/${id}.png`}
+                  src={`/images/accounts/${accountId}/posts/${imageName}`}
                 />
               </Center>
             )}
