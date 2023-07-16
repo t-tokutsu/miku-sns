@@ -18,7 +18,7 @@ export const Account: FC = () => {
   const { accountId, setAccountId } = useJotaiAccountId();
   const { posts } = useJotaiPosts();
   if (!accountId) return null;
-  const { name } = accountData[accountId];
+  const { name, description } = accountData[accountId];
   const accountPosts = posts.filter(
     ({ accountId: postAccountId }) => postAccountId === accountId
   );
@@ -57,7 +57,7 @@ export const Account: FC = () => {
           fontWeight={"bold"}
           p={3}
         >
-          私はこんな人ですーー
+          {description}
         </Box>
         {accountPosts.map((post) => (
           <Post key={post.id} post={post} />
