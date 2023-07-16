@@ -1,4 +1,4 @@
-import { Avatar, Box, HStack, Spacer } from "@chakra-ui/react";
+import { Avatar, HStack, Spacer, Text } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import { useScrollDirection } from "react-use-scroll-direction";
 
@@ -27,7 +27,9 @@ export const Header: FC = () => {
       transitionProperty={"transform"}
       zIndex={"sticky"}
     >
-      <Box>ロゴ</Box>
+      <Text fontFamily={"barcode"} fontSize={"4xl"} lineHeight={1}>
+        Miku SNS
+      </Text>
       <Spacer />
       <Avatar size={"sm"} />
     </HStack>
