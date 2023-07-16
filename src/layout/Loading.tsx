@@ -1,18 +1,11 @@
 import { Center, Text, VStack } from "@chakra-ui/react";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Triangle } from "react-loader-spinner";
-import { usePlayerListener } from "../features/player/hooks/usePlayerListener";
+import { useJotaiIsPlayerLoadedAtom } from "../jotai/useJotaiPlayer";
 
 export const Loading: FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  usePlayerListener({
-    onVideoReady: () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2 * 1000);
-    },
-  });
-  return isLoading ? (
+  const { isPlayerLoaded } = useJotaiIsPlayerLoadedAtom();
+  return isPlayerLoaded ? null : (
     <Center bg={"gradation.green"} inset={0} pos={"fixed"} zIndex={"overlay"}>
       <VStack spacing={8}>
         <Triangle
@@ -32,5 +25,5 @@ export const Loading: FC = () => {
         </Text>
       </VStack>
     </Center>
-  ) : null;
+  );
 };

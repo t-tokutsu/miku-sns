@@ -10,8 +10,17 @@ export const useJotaiPlayer = () => {
   return { player, setPlayer };
 };
 
+const isPlayerLoadedAtom = atom<boolean>(false);
+isPlayerLoadedAtom.debugLabel = "isPlayerLoadedAtom";
+
+export const useJotaiIsPlayerLoadedAtom = () => {
+  const [isPlayerLoaded, setIsPlayerLoaded] = useAtom(isPlayerLoadedAtom);
+  return { isPlayerLoaded, setIsPlayerLoaded };
+};
+
 export const useUpdateJotaiPlayer = () => {
   const { player, setPlayer } = useJotaiPlayer();
+  const { setIsPlayerLoaded } = useJotaiIsPlayerLoadedAtom();
   const mediaElementRef = useRef<HTMLDivElement>(null);
 
   // playerの指定
@@ -46,6 +55,29 @@ export const useUpdateJotaiPlayer = () => {
       },
     });
   }, [player]);
+
+  useEffect(() => {
+    // 監視対象の指定
+    const targetElement = mediaElementRef.current;
+    if (!targetElement) return;
+
+    // 監視内容の設定
+    const observer = new MutationObserver((mutationCallback) => {
+      mutationCallback.forEach((mutationRecord) => {
+        mutationRecord.addedNodes.forEach((addedNode) => {
+          if (addedNode.nodeName === "AUDIO") {
+            setIsPlayerLoaded(true);
+          }
+        });
+      });
+    });
+    // 監視の開始
+    observer.observe(targetElement, {
+      attributes: true,
+      subtree: true,
+      childList: true,
+    });
+  }, [setIsPlayerLoaded]);
 
   return {
     mediaElementRef,
