@@ -4,7 +4,12 @@ import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiPlayer } from "../player/jotai/useJotaiPlayer";
-import { accountData, accountIds } from "./data/accounts";
+import {
+  accountData,
+  accountIds,
+  mikuAccountId,
+  myAccountId,
+} from "./data/accounts";
 import { TypePost } from "./data/posts";
 import { repliesData } from "./data/replies";
 
@@ -117,7 +122,26 @@ export const useJotaiPosts = () => {
   const getReplies = (postId: string): TypePost[] =>
     posts.filter(({ parentPostId }) => parentPostId === postId);
 
-  return { posts, setPosts, getReplies };
+  const setPostWithLike = (
+    props: Parameters<typeof setPosts>[0],
+    targetId: string
+  ) => {
+    setPosts(props);
+    accountIds.forEach((accountId) => {
+      if (accountId === myAccountId) return;
+      if (Math.random() < 0.8) {
+        setTimeout(() => {
+          setPosts((draft) => {
+            const targetPost = draft.find(({ id }) => id === targetId);
+            if (!targetPost) return;
+            targetPost.likeAccountIds.push(accountId);
+          });
+        }, getRandomNumber(300, 5000));
+      }
+    });
+  };
+
+  return { posts, setPosts, setPostWithLike, getReplies };
 };
 
 export const useUpdateJotaiPosts = () => {
@@ -142,19 +166,24 @@ export const useUpdateJotaiPosts = () => {
                   id: targetId,
                   content: unit.text,
                   date: new Date(),
-                  accountId: "1",
+                  accountId: mikuAccountId,
                   likeAccountIds: [],
                 });
               });
 
               accountIds.forEach((accountId) => {
-                setTimeout(() => {
-                  setPosts((draft) => {
-                    const targetPost = draft.find(({ id }) => id === targetId);
-                    if (!targetPost) return;
-                    targetPost.likeAccountIds.push(accountId);
-                  });
-                }, getRandomNumber(1000, 5000));
+                if (accountId === myAccountId) return;
+                if (Math.random() < 0.8) {
+                  setTimeout(() => {
+                    setPosts((draft) => {
+                      const targetPost = draft.find(
+                        ({ id }) => id === targetId
+                      );
+                      if (!targetPost) return;
+                      targetPost.likeAccountIds.push(accountId);
+                    });
+                  }, getRandomNumber(300, 5000));
+                }
               });
 
               toast({
@@ -180,7 +209,7 @@ export const useUpdateJotaiPosts = () => {
                     w={"full"}
                   >
                     <Text fontSize={"sm"} fontWeight={"bold"}>
-                      {accountData["1"].name}
+                      {accountData[mikuAccountId].name}
                     </Text>
                     <Text fontSize={"sm"} fontWeight={"bold"}>
                       {unit.text}

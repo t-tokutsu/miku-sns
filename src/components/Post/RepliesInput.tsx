@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
 import { FiSend } from "react-icons/fi";
+import { myAccountId } from "../../features/posts/data/accounts";
 import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 
 export const RepliesInput: FC<
@@ -14,7 +15,7 @@ export const RepliesInput: FC<
     parentPostId: string;
   } & StackProps
 > = ({ parentPostId, ...stackProps }) => {
-  const { setPosts } = useJotaiPosts();
+  const { setPostWithLike } = useJotaiPosts();
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
@@ -48,16 +49,17 @@ export const RepliesInput: FC<
         fontSize={"xl"}
         icon={<FiSend />}
         onClick={() => {
-          setPosts((draft) => {
+          const targetId = `${uuid}_${Date.now()}`;
+          setPostWithLike((draft) => {
             draft.unshift({
-              id: `${uuid}_${Date.now()}`,
+              id: targetId,
               content,
               date: new Date(),
-              accountId: "1",
-              likeAccountIds: ["2"],
+              accountId: myAccountId,
+              likeAccountIds: [],
               parentPostId,
             });
-          });
+          }, targetId);
           setContent("");
         }}
         size={"lg"}

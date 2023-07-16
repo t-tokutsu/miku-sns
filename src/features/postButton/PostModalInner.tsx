@@ -1,12 +1,13 @@
 import { Box, HStack, IconButton, Stack, Textarea } from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
 import { FiSend } from "react-icons/fi";
+import { myAccountId } from "../posts/data/accounts";
 import { useJotaiPosts } from "../posts/useJotaiPosts";
 
 export const PostModalInner: FC<{
   onClose: () => void;
 }> = ({ onClose }) => {
-  const { setPosts } = useJotaiPosts();
+  const { setPostWithLike } = useJotaiPosts();
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
@@ -38,15 +39,15 @@ export const PostModalInner: FC<{
           fontSize={"xl"}
           icon={<FiSend />}
           onClick={() => {
-            setPosts((draft) => {
+            setPostWithLike((draft) => {
               draft.unshift({
                 id: uuid,
                 content,
                 date: new Date(),
-                accountId: "1",
-                likeAccountIds: ["2"],
+                accountId: myAccountId,
+                likeAccountIds: [],
               });
-            });
+            }, uuid);
             onClose();
           }}
           size={"lg"}

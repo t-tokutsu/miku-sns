@@ -3,6 +3,12 @@ type TypeAccount = {
 };
 
 export const accountData = {
+  miku: {
+    name: "初音ミク",
+  },
+  you: {
+    name: "あなた",
+  },
   "1": {
     name: "Alice",
   },
@@ -15,6 +21,9 @@ export const accountData = {
 } as const satisfies {
   [id: string]: TypeAccount;
 };
+
+export const myAccountId: TypeAccountId = "you";
+export const mikuAccountId: TypeAccountId = "miku";
 
 export type TypeAccountId = keyof typeof accountData;
 

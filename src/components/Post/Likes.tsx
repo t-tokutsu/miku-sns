@@ -1,7 +1,7 @@
 import { HStack, Text, chakra, Icon } from "@chakra-ui/react";
 import { FC } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { TypeAccountId } from "../../features/posts/data/accounts";
+import { myAccountId } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
 import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 
@@ -9,9 +9,8 @@ export const Likes: FC<{
   post: TypePost;
 }> = ({ post: { id, likeAccountIds } }) => {
   const { setPosts } = useJotaiPosts();
-  const userAccountId: TypeAccountId = "1";
   const isLiked = likeAccountIds.some(
-    (likeAccountId) => likeAccountId === userAccountId
+    (likeAccountId) => likeAccountId === myAccountId
   );
   return (
     <chakra.button
@@ -23,10 +22,10 @@ export const Likes: FC<{
           if (!targetPost?.likeAccountIds) return;
           if (isLiked) {
             targetPost.likeAccountIds = targetPost.likeAccountIds.filter(
-              (likeAccountId) => likeAccountId !== userAccountId
+              (likeAccountId) => likeAccountId !== myAccountId
             );
           } else {
-            targetPost.likeAccountIds.push(userAccountId);
+            targetPost.likeAccountIds.push(myAccountId);
           }
         })
       }
