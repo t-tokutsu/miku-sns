@@ -3,7 +3,6 @@ import {
   Collapse,
   HStack,
   IconButton,
-  Link,
   Stack,
   StackProps,
   Text,
@@ -44,29 +43,22 @@ export const Player: FC<StackProps> = ({ ...stackProps }) => {
             onClick={togglePlay}
           />
           <Collapse in={isOpen} startingHeight={20}>
-            <Link
+            <HStack
+              as={"button"}
               color={"white"}
-              css={
-                isOpen
-                  ? undefined
-                  : {
-                      WebkitLineClamp: 1,
-                      WebkitBoxOrient: "vertical",
-                      display: "-webkit-box",
-                    }
-              }
               onClick={() => setIsOpen((prev) => !prev)}
               overflow={"hidden"}
+              whiteSpace={"nowrap"}
             >
               <Text fontSize={"sm"} fontWeight={"bold"}>
                 {songName}
               </Text>
               <Text fontSize={"xs"}>{artistName}</Text>
-            </Link>
+            </HStack>
           </Collapse>
         </HStack>
         <Collapse animateOpacity in={isOpen}>
-          <Box p={4}>
+          <Box px={4} py={2}>
             <MusicSlider />
           </Box>
         </Collapse>
