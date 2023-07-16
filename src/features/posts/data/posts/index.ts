@@ -14,8 +14,7 @@ export type TypePost = {
   parentPostId?: string;
 };
 
-export const postsData: TypePost[] = [
-  ...male_10_yuta,
+const postsArray: TypePost[] = [
   {
     id: v4(),
     accountId: "miku",
@@ -31,3 +30,11 @@ export const postsData: TypePost[] = [
       "「初音ミク」はクリプトン・フューチャー・メディア株式会社の著作物です。\n© Crypton Future Media, INC. www.piapro.net",
   },
 ];
+
+export const postsData: TypePost[] = [...male_10_yuta, ...postsArray].sort(
+  ({ date: dateA }, { date: dateB }) => {
+    console.log(Number(dateA));
+    console.log(Number(dateB));
+    return Number(dateB) - Number(dateA);
+  }
+);

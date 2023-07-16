@@ -9,7 +9,7 @@ import { useJotaiPosts } from "./useJotaiPosts";
 
 export const Posts: FC = () => {
   const { posts } = useJotaiPosts();
-  const mainPosts = posts.filter(({ parentPostId }) => !parentPostId);
+  const mainPosts = [...posts].filter(({ parentPostId }) => !parentPostId);
   return (
     <>
       {/* ヘッダーエリア */}
