@@ -34,7 +34,10 @@ export const useJotaiPosts = () => {
           setPosts((draft) => {
             const targetPost = draft.find(({ id }) => id === targetId);
             if (!targetPost) return;
-            targetPost.likeAccountIds.push(accountId);
+            targetPost.likeAccountIds = [
+              ...(targetPost.likeAccountIds ?? []),
+              accountId,
+            ];
           });
         }, getRandomNumber(300, 5000));
       }
@@ -68,7 +71,6 @@ export const useUpdateJotaiPosts = () => {
                   content: postText,
                   date: new Date(),
                   accountId: mikuAccountId,
-                  likeAccountIds: [],
                 });
               });
 
@@ -81,7 +83,10 @@ export const useUpdateJotaiPosts = () => {
                         ({ id }) => id === targetId
                       );
                       if (!targetPost) return;
-                      targetPost.likeAccountIds.push(accountId);
+                      targetPost.likeAccountIds = [
+                        ...(targetPost.likeAccountIds ?? []),
+                        accountId,
+                      ];
                     });
                   }, getRandomNumber(300, 5000));
                 }

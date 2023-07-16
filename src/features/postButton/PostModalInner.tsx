@@ -45,7 +45,6 @@ export const PostModalInner: FC<{
                 content,
                 date: new Date(),
                 accountId: myAccountId,
-                likeAccountIds: [],
               });
             }, uuid);
             onClose();

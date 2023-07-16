@@ -56,7 +56,6 @@ export const RepliesInput: FC<
               content,
               date: new Date(),
               accountId: myAccountId,
-              likeAccountIds: [],
               parentPostId,
             });
           }, targetId);

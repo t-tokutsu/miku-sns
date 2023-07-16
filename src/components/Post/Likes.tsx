@@ -9,7 +9,7 @@ export const Likes: FC<{
   post: TypePost;
 }> = ({ post: { id, likeAccountIds } }) => {
   const { setPosts } = useJotaiPosts();
-  const isLiked = likeAccountIds.some(
+  const isLiked = likeAccountIds?.some(
     (likeAccountId) => likeAccountId === myAccountId
   );
   return (
@@ -33,7 +33,7 @@ export const Likes: FC<{
       <HStack spacing={1}>
         <Icon as={isLiked ? BsHeartFill : BsHeart} fontSize={"sm"} />
         <Text fontSize={"sm"} lineHeight={1} pb={0.5}>
-          {likeAccountIds.length}
+          {likeAccountIds?.length}
         </Text>
       </HStack>
     </chakra.button>
