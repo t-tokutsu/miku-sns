@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Post } from "../../components/Post";
 import { accountData } from "../posts/data/accounts";
@@ -17,11 +17,15 @@ import { useJotaiAccountId } from "./useJotaiAccountId";
 export const Account: FC = () => {
   const { accountId, setAccountId } = useJotaiAccountId();
   const { posts } = useJotaiPosts();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (!accountId) return null;
   const { name, description } = accountData[accountId];
   const accountPosts = posts.filter(
     ({ accountId: postAccountId }) => postAccountId === accountId
   );
+
   return (
     <Box>
       <SimpleGrid

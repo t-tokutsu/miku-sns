@@ -10,7 +10,7 @@ const formatDate = (date: Date): string => {
   } else if (differenceSeconds < 60 * 60) {
     return `${Math.floor(differenceSeconds / 60)}分前`;
   } else {
-    return format(date, "yyyy/MM/dd HH:mm");
+    return format(date, "M/dd H:mm");
   }
 };
 
