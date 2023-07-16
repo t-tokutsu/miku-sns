@@ -5,7 +5,7 @@
  */
 export const colors = {
   gradation: {
-    green: "linear-gradient(90deg, #90f59a, #04c9ff)",
+    green: "linear-gradient(90deg, #04c9ff, #90f59a)",
     purple: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   },
 };

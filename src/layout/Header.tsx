@@ -19,7 +19,7 @@ export const Header: FC = () => {
 
   return (
     <HStack
-      bg={"white"}
+      bg={"gradation.green"}
       left={0}
       p={2}
       pos={"sticky"}
@@ -30,7 +30,12 @@ export const Header: FC = () => {
       transitionProperty={"transform"}
       zIndex={"sticky"}
     >
-      <Text fontFamily={"barcode"} fontSize={"4xl"} lineHeight={1}>
+      <Text
+        color={"white"}
+        fontFamily={"barcode"}
+        fontSize={"4xl"}
+        lineHeight={1}
+      >
         Miku SNS
       </Text>
       <Spacer />
