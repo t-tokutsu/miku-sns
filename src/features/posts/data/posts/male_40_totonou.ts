@@ -1,5 +1,4 @@
-import { subHours } from "date-fns";
-import { v4 } from "uuid";
+import { getPostsArray } from "./getPostsArray";
 import { TypePost } from ".";
 
 const postsArray: Pick<TypePost, "content" | "imageName">[] = [
@@ -80,12 +79,7 @@ const postsArray: Pick<TypePost, "content" | "imageName">[] = [
   },
 ];
 
-export const male_40_totonou: TypePost[] = postsArray.map(
-  ({ content, imageName }, index) => ({
-    id: v4(),
-    accountId: "male_40_totonou",
-    date: subHours(new Date(), (index + 1) * 10),
-    content,
-    imageName,
-  })
+export const male_40_totonou: TypePost[] = getPostsArray(
+  "male_40_totonou",
+  postsArray
 );

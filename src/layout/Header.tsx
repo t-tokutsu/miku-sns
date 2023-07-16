@@ -40,6 +40,8 @@ export const Header: FC = () => {
       </Text>
       <Spacer />
       <Avatar
+        borderColor={"white"}
+        borderWidth={1}
         onClick={() => setAccountId(myAccountId)}
         size={"sm"}
         src={`/images/accounts/${myAccountId}/icon.jpg`}

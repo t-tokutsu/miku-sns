@@ -31,7 +31,7 @@ export const Account: FC = () => {
       <SimpleGrid
         alignItems={"center"}
         bg={"white"}
-        gridTemplateColumns={"40px 1fr 40px"}
+        gridTemplateColumns={"40px minmax(0, 1fr) 40px"}
         p={2}
         pos={"sticky"}
         spacing={0}
@@ -45,9 +45,17 @@ export const Account: FC = () => {
           icon={<IoMdArrowRoundBack />}
           onClick={() => setAccountId(undefined)}
         />
-        <HStack justifyContent={"center"}>
+        <HStack justifyContent={"center"} pos={"relative"}>
           <Avatar size={"sm"} src={`/images/accounts/${accountId}/icon.jpg`} />
-          <Text fontSize={"md"} fontWeight={"bold"} textAlign={"center"}>
+          <Text
+            fontSize={"md"}
+            fontWeight={"bold"}
+            maxW={"full"}
+            overflow={"hidden"}
+            textAlign={"center"}
+            textOverflow={"ellipsis"}
+            whiteSpace={"nowrap"}
+          >
             {name}
           </Text>
         </HStack>

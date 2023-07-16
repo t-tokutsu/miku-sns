@@ -27,8 +27,17 @@ const postsArray: TypePost[] = [
     id: v4(),
     accountId: "miku",
     date: new Date(),
-    content: "聴いてね！！",
+    content: "ミュウテイション歌ったよ！",
     hasPlayer: true,
+    likeAccountIds: [
+      "female_10_sumire",
+      "female_20_aomori",
+      "female_20_mint",
+      "female_60_science",
+      "male_40_totonou",
+      "male_30_pain",
+      "male_50_toshizo",
+    ],
   },
   {
     id: v4(),
@@ -36,6 +45,13 @@ const postsArray: TypePost[] = [
     date: new Date(),
     content:
       "「初音ミク」はクリプトン・フューチャー・メディア株式会社の著作物です。\n© Crypton Future Media, INC. www.piapro.net",
+    likeAccountIds: [
+      "female_10_sumire",
+      "female_20_aomori",
+      "female_20_mint",
+      "male_30_pain",
+      "male_50_toshizo",
+    ],
   },
 ];
 
