@@ -42,7 +42,7 @@ export const Header: FC = () => {
       <Avatar
         onClick={() => setAccountId(myAccountId)}
         size={"sm"}
-        src={`/images/accounts/${myAccountId}/icon.png`}
+        src={`/images/accounts/${myAccountId}/icon.jpg`}
       />
     </HStack>
   );

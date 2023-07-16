@@ -4,13 +4,18 @@ type TypeAccount = {
 };
 
 export const accountData = {
+  // TODO: 以下のライセンス表記を追記する
+  // 「初音ミク」はクリプトン・フューチャー・メディア株式会社の著作物です。
+  // © Crypton Future Media, INC. www.piapro.net
   miku: {
-    name: "初音ミク",
-    description: "私はマルマル",
+    name: "初音ミク@その名はもちろん",
+    description:
+      "未来の音楽を創造するバーチャル・シンガー、初音ミクです！。突然変異中。",
   },
   you: {
-    name: "あなた",
-    description: "私はマルマル",
+    name: "ボカロ好き丸@マジカルミライ2023",
+    description:
+      "初音ミクをはじめとするバーチャルシンガーやボーカロイドの魅力に夢中なファンです。一緒にボカロワールドを楽しみましょう！",
   },
   "1": {
     name: "Alice",

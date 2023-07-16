@@ -43,9 +43,11 @@ export const Post: FC<{
         p={3}
       >
         <Avatar
+          bg={"gradation.green"}
           onClick={() => setAccountId(accountId)}
+          p={0.5}
           size={"sm"}
-          src={`/images/accounts/${accountId}/icon.png`}
+          src={`/images/accounts/${accountId}/icon.jpg`}
         />
         <Stack spacing={1} w={"full"}>
           <HStack>
