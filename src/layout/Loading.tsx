@@ -12,14 +12,7 @@ export const Loading: FC = () => {
     },
   });
   return isLoading ? (
-    <Center
-      bg={
-        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-      }
-      inset={0}
-      pos={"fixed"}
-      zIndex={"overlay"}
-    >
+    <Center bg={"gradation.green"} inset={0} pos={"fixed"} zIndex={"overlay"}>
       <Spinner color={"white"} size="xl" />
     </Center>
   ) : null;

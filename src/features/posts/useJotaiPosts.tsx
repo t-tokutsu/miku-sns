@@ -99,9 +99,7 @@ export const useUpdateJotaiPosts = () => {
                 render: ({ onClose }) => (
                   <Stack
                     as={"a"}
-                    bg={
-                      "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-                    }
+                    bg={"gradation.green"}
                     borderRadius={8}
                     borderWidth={1}
                     color={"white"}

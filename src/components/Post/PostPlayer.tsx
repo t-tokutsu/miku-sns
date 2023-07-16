@@ -14,14 +14,7 @@ export const PostPlayer: FC = () => {
   const { artistName } = useJotaiArtistName();
   const { songName } = useJotaiSongName();
   return (
-    <HStack
-      bg={
-        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-      }
-      borderRadius={8}
-      color={"white"}
-      p={2}
-    >
+    <HStack bg={"gradation.green"} borderRadius={8} color={"white"} p={2}>
       <IconButton
         aria-label={isPlaying ? "停止" : "再生"}
         bg={"none"}

@@ -19,7 +19,7 @@ export const PostButton: FC = () => {
     <>
       <IconButton
         aria-label={"ポストする"}
-        bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}
+        bg={"gradation.purple"}
         borderRadius={"full"}
         bottom={16}
         color={"white"}

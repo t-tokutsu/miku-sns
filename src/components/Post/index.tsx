@@ -27,9 +27,7 @@ export const Post: FC<{
   const { id, accountId, date, content, hasImage, hasPlayer } = post;
   return (
     <Box
-      bg={
-        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-      }
+      bg={"gradation.green"}
       borderRadius={8}
       id={post.id}
       p={0.5}

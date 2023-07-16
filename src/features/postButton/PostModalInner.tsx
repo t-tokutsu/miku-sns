@@ -12,13 +12,7 @@ export const PostModalInner: FC<{
   const uuid = useId();
   return (
     <Stack>
-      <Box
-        bg={
-          "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-        }
-        borderRadius={8}
-        p={0.5}
-      >
+      <Box bg={"gradation.green"} borderRadius={8} p={0.5}>
         <Textarea
           bg={"white"}
           borderWidth={0}
@@ -35,7 +29,7 @@ export const PostModalInner: FC<{
       <HStack justifyContent={"flex-end"}>
         <IconButton
           aria-label={"ポストする"}
-          bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}
+          bg={"gradation.purple"}
           color={"white"}
           fontSize={"xl"}
           icon={<FiSend />}

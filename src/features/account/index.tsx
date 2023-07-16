@@ -50,7 +50,7 @@ export const Account: FC = () => {
       </SimpleGrid>
       <Stack maxW={"640px"} mx={"auto"} p={4}>
         <Box
-          bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}
+          bg={"gradation.purple"}
           borderRadius={4}
           color={"white"}
           fontSize={"sm"}

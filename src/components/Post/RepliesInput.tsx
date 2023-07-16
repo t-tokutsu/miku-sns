@@ -19,14 +19,7 @@ export const RepliesInput: FC<
   const [content, setContent] = useState("");
   const uuid = useId();
   return (
-    <HStack
-      bg={
-        "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-      }
-      p={1}
-      spacing={1}
-      {...stackProps}
-    >
+    <HStack bg={"gradation.green"} p={1} spacing={1} {...stackProps}>
       <Box borderRadius={8} p={0.5} w={"full"}>
         <Textarea
           bg={"white"}
@@ -44,7 +37,7 @@ export const RepliesInput: FC<
       </Box>
       <IconButton
         aria-label={"ポストする"}
-        bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}
+        bg={"gradation.purple"}
         color={"white"}
         fontSize={"xl"}
         icon={<FiSend />}

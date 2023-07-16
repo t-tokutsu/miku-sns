@@ -28,15 +28,7 @@ export const Player: FC = () => {
   return (
     <>
       <Slide direction={"bottom"} in={playerIsShow}>
-        <Stack
-          bg={
-            "linear-gradient(90deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1))"
-          }
-          borderRadius={8}
-          m={2}
-          p={1}
-          spacing={0}
-        >
+        <Stack bg={"gradation.green"} borderRadius={8} m={2} p={1} spacing={0}>
           <HStack spacing={0}>
             <IconButton
               aria-label={isPlaying ? "停止" : "再生"}
