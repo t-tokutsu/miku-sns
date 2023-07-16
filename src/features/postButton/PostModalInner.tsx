@@ -1,4 +1,11 @@
-import { Box, HStack, IconButton, Stack, Textarea } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  IconButton,
+  Input,
+  Stack,
+  Textarea,
+} from "@chakra-ui/react";
 import { FC, useId, useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { myAccountId } from "../posts/data/accounts";
@@ -32,6 +39,12 @@ export const PostModalInner: FC<{
         />
       </Box>
       <HStack justifyContent={"flex-end"}>
+        <Input
+          accept={"image/png, image/jpeg"}
+          placeholder={"添付画像"}
+          size={"md"}
+          type={"file"}
+        />
         <IconButton
           aria-label={"ポストする"}
           bg={"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"}

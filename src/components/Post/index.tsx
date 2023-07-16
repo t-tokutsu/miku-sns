@@ -72,11 +72,12 @@ export const Post: FC<{
               <Text fontSize={"sm"} whiteSpace={"pre-wrap"}>
                 {content}
               </Text>
+              {/* 画像 */}
               {hasImage && (
                 <Center>
                   <chakra.img
                     alt=""
-                    maxH={"400px"}
+                    maxH={"300px"}
                     src={`/images/posts/${id}.png`}
                   />
                 </Center>

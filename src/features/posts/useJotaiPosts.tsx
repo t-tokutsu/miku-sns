@@ -161,11 +161,12 @@ export const useUpdateJotaiPosts = () => {
             if (lastPhraseStartTime !== unit.startTime) {
               lastPhraseStartTime = unit.startTime;
               const targetId = `${unit.startTime}_${Date.now()}`;
+              const postText = unit.text.replace(/（.*?）/, "");
 
               setPosts((draft) => {
                 draft.unshift({
                   id: targetId,
-                  content: unit.text,
+                  content: postText,
                   date: new Date(),
                   accountId: mikuAccountId,
                   likeAccountIds: [],
@@ -213,7 +214,7 @@ export const useUpdateJotaiPosts = () => {
                       {accountData[mikuAccountId].name}
                     </Text>
                     <Text fontSize={"sm"} fontWeight={"bold"}>
-                      {unit.text}
+                      {postText}
                     </Text>
                   </Stack>
                 ),
