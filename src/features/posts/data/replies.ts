@@ -100,16 +100,81 @@ export const repliesData: {
   ],
 
   // 輪郭は塵芥
-  28972: [],
+  28972: [
+    {
+      accountId: "female_20_mint",
+      content: "消えないでー",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "わかります、諸行無常ですよねー",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "塵芥ってなんですか？",
+    },
+    {
+      accountId: "female_60_science",
+      content: "人類みな塵芥（素粒子の集合なので）",
+    },
+  ],
 
   // 電気的歌声は
-  32229.999999999996: [],
+  32229.999999999996: [
+    {
+      accountId: "male_30_pain",
+      content: "歌声にいつも癒されてます！",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "うちのミーちゃんも歌ってます❤️",
+      imageName: "1.jpeg",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "らららーー",
+    },
+  ],
 
   // 音へと溶ける
-  34850: [],
+  34850: [
+    {
+      accountId: "female_60_science",
+      content: "エントロピーが増大しておる",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "過去の歴史も溶けて消えていくのかな。。",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "溶けるーー！",
+    },
+  ],
 
   // 目的のない世界に（せかいに）
-  38706: [],
+  38706: [
+    {
+      accountId: "male_10_yuta",
+      content: "せかいにー！",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "せかいに！",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "目的ないの悲しい..",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "自分の最近の目的は家族と楽しく暮らすことかなー",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "哲学的ですねー",
+    },
+  ],
 
   // 色を加える魔法（まほう）
   41996: [],
