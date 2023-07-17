@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useSwipeable } from "react-swipeable";
 import { Post } from "../../components/Post";
 import { useJotaiPosts } from "../posts/useJotaiPosts";
 import { RepliesInput } from "./RepliesInput";
@@ -26,9 +27,6 @@ export const Replies: FC = () => {
   }, [parentPostId, onOpen]);
   const parentPost = posts.find(({ id }) => id === parentPostId);
 
-  if (!parentPostId) return null;
-  if (!parentPost) return null;
-
   const onDrawerClose = () => {
     onClose();
     setTimeout(() => {
@@ -36,10 +34,17 @@ export const Replies: FC = () => {
     }, 200);
   };
 
+  const handlers = useSwipeable({
+    onSwipedRight: () => onDrawerClose(),
+  });
+
+  if (!parentPostId) return null;
+  if (!parentPost) return null;
+
   return (
     <Drawer isOpen={isOpen} onClose={onDrawerClose} size={"full"}>
       <DrawerOverlay />
-      <DrawerContent>
+      <DrawerContent {...handlers}>
         <DrawerHeader p={1}>
           <SimpleGrid
             alignItems={"center"}

@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-loader-spinner": "^5.3.4",
+    "react-swipeable": "^7.0.1",
     "react-use": "^17.4.0",
     "react-use-scroll-direction": "^0.1.0",
     "textalive-app-api": "^0.3.2",

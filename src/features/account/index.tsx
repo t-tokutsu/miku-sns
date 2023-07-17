@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useSwipeable } from "react-swipeable";
 import { Post } from "../../components/Post";
 import { accountData } from "../posts/data/accounts";
 import { useJotaiPosts } from "../posts/useJotaiPosts";
@@ -28,12 +29,6 @@ export const Account: FC = () => {
     if (accountId) onOpen();
   }, [accountId, onOpen]);
 
-  if (!accountId) return null;
-  const { name, description } = accountData[accountId];
-  const accountPosts = posts.filter(
-    ({ accountId: postAccountId }) => postAccountId === accountId
-  );
-
   const onDrawerClose = () => {
     onClose();
     setTimeout(() => {
@@ -41,10 +36,20 @@ export const Account: FC = () => {
     }, 200);
   };
 
+  const handlers = useSwipeable({
+    onSwipedRight: () => onDrawerClose(),
+  });
+
+  if (!accountId) return null;
+  const { name, description } = accountData[accountId];
+  const accountPosts = posts.filter(
+    ({ accountId: postAccountId }) => postAccountId === accountId
+  );
+
   return (
     <Drawer isOpen={isOpen} onClose={onDrawerClose} size={"full"}>
       <DrawerOverlay />
-      <DrawerContent>
+      <DrawerContent {...handlers}>
         <DrawerHeader bg={"gradation.green"} pb={0.5} pt={0} px={0}>
           <SimpleGrid
             alignItems={"center"}
