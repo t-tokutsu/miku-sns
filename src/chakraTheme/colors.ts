@@ -4,6 +4,7 @@
  * @package
  */
 export const colors = {
+  mikuGreen: "#50c9c3",
   gradation: {
     green: "linear-gradient(60deg, #50c9c3 0%, #96deda 100%)",
     purple:

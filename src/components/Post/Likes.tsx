@@ -7,7 +7,8 @@ import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 
 export const Likes: FC<{
   post: TypePost;
-}> = ({ post: { id, likeAccountIds } }) => {
+  isActive: boolean;
+}> = ({ post: { id, likeAccountIds }, isActive }) => {
   const { setPosts } = useJotaiPosts();
   const isLiked = likeAccountIds?.some(
     (likeAccountId) => likeAccountId === myAccountId
@@ -33,7 +34,11 @@ export const Likes: FC<{
         })
       }
     >
-      <HStack spacing={1}>
+      <HStack
+        color={isActive ? "currentcolor" : isLiked ? "mikuGreen" : undefined}
+        fontWeight={isLiked ? "bold" : undefined}
+        spacing={1}
+      >
         <Icon as={isLiked ? BsHeartFill : BsHeart} fontSize={"sm"} />
         <Text fontSize={"sm"} lineHeight={1} pb={0.5}>
           {likeAccountIds?.length ?? 0}

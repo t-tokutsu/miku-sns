@@ -102,8 +102,12 @@ export const Post: FC<{
                 </Stack>
                 {hasPlayer && <PostPlayer />}
                 <HStack spacing={4}>
-                  <Likes post={post} />
-                  <RepliesButton onOpenDrawer={onOpenDrawer} post={post} />
+                  <Likes isActive={isActive} post={post} />
+                  <RepliesButton
+                    isActive={isActive}
+                    onOpenDrawer={onOpenDrawer}
+                    post={post}
+                  />
                 </HStack>
               </Stack>
             </Stack>
