@@ -100,7 +100,7 @@ export const useUpdateJotaiPosts = () => {
                 render: ({ onClose }) => (
                   <HStack
                     as={"button"}
-                    bg={"gradation.green"}
+                    bg={"gradation.purple"}
                     borderRadius={"full"}
                     borderWidth={1}
                     color={"white"}
