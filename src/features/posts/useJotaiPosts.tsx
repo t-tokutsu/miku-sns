@@ -3,6 +3,7 @@ import { useAtom } from "jotai";
 import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { useJotaiPlayer } from "../../jotai/useJotaiPlayer";
+import { useJotaiAccountId } from "../account/useJotaiAccountId";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
 import { useJotaiParentPostId } from "../replies/useJotaiParentId";
 import { accountIds, mikuAccountId, myAccountId } from "./data/accounts";
@@ -47,6 +48,7 @@ export const useUpdateJotaiPosts = () => {
   const { player } = useJotaiPlayer();
   const { setPosts } = useJotaiPosts();
   const { setParentPostId } = useJotaiParentPostId();
+  const { setAccountId } = useJotaiAccountId();
   const toast = useToast();
 
   usePlayerListener({
@@ -104,6 +106,7 @@ export const useUpdateJotaiPosts = () => {
                     color={"white"}
                     onClick={() => {
                       setParentPostId(targetId);
+                      setAccountId(undefined);
                       onClose();
                     }}
                     p={1}
@@ -135,7 +138,7 @@ export const useUpdateJotaiPosts = () => {
                       parentPostId: targetPost.id,
                     });
                   });
-                }, getRandomNumber(1000, 5000));
+                }, getRandomNumber(300, 5000));
               });
             }
           }
