@@ -25,18 +25,13 @@ export const useUpdateJotaiPlayer = () => {
 
   // playerの指定
   useEffect(() => {
-    const onLoad = () => {
-      setPlayer(
-        new Player({
-          app: { token: "YfmLXwu5z1qYwGkT" },
-          mediaElement: mediaElementRef.current ?? undefined,
-        })
-      );
-    };
-    window.addEventListener("load", onLoad);
-
+    setPlayer(
+      new Player({
+        app: { token: "YfmLXwu5z1qYwGkT" },
+        mediaElement: mediaElementRef.current ?? undefined,
+      })
+    );
     return () => {
-      window.removeEventListener("load", onLoad);
       setPlayer(undefined);
     };
   }, [setPlayer]);
