@@ -7,14 +7,23 @@ import { useJotaiArtistName } from "../../jotai/useJotaiArtistName";
 import { useJotaiIsPlaying } from "../../jotai/useJotaiIsPlaying";
 import { useJotaiSongName } from "../../jotai/useJotaiSongName";
 
-export const PostPlayer: FC = () => {
+export const PostPlayer: FC<{
+  isActive: boolean;
+}> = ({ isActive }) => {
   const { setPlayerIsShow } = useJotaiPlayerIsShow();
   const { togglePlay } = useTogglePlay();
   const { isPlaying } = useJotaiIsPlaying();
   const { artistName } = useJotaiArtistName();
   const { songName } = useJotaiSongName();
   return (
-    <HStack bg={"gradation.green"} borderRadius={8} color={"white"} p={2}>
+    <HStack
+      bg={"gradation.green"}
+      borderColor={"white"}
+      borderRadius={8}
+      borderWidth={isActive ? 2 : 0}
+      color={"white"}
+      p={2}
+    >
       <IconButton
         aria-label={isPlaying ? "停止" : "再生"}
         bg={"none"}

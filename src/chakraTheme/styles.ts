@@ -7,7 +7,6 @@ import { colors } from './colors';
 export const styles = {
   global: {
     body: {
-      minHeight: "100vh",
       fontFamily: `'Noto Sans JP', sans-serif`,
     },
     "#root": {

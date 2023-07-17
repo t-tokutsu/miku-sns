@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { FC, useState } from "react";
+import { FC, memo, useState } from "react";
 import { MdPlayArrow, MdPause } from "react-icons/md";
 import { useJotaiArtistName } from "../../jotai/useJotaiArtistName";
 import { useJotaiIsPlaying } from "../../jotai/useJotaiIsPlaying";
@@ -17,7 +17,7 @@ import { useTogglePlay } from "./hooks/useTogglePlay";
 import { useJotaiPlayerIsShow } from "./jotai/useJotaiPlayerIsShow";
 import { MusicSlider } from "./MusicSlider";
 
-export const Player: FC = () => {
+export const Player: FC = memo(() => {
   const { playerIsShow } = useJotaiPlayerIsShow();
   const { togglePlay } = useTogglePlay();
   const { isPlaying } = useJotaiIsPlaying();
@@ -63,4 +63,6 @@ export const Player: FC = () => {
       <Spacer h={"64px"} />
     </>
   );
-};
+});
+
+Player.displayName = "Player";

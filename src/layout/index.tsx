@@ -9,7 +9,7 @@ export const Layout: FC<{
   const { isPlayerLoaded } = useJotaiIsPlayerLoaded();
   return (
     <>
-      <Box bg={"gray.50"} minH={"100vh"}>
+      <Box bg={"gray.50"}>
         {/* メインエリア */}
         <Box
           h={isPlayerLoaded ? undefined : 0}

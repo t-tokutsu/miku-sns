@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useJotaiAccountId } from "../../features/account/useJotaiAccountId";
 import { accountData } from "../../features/posts/data/accounts";
 import { TypePost } from "../../features/posts/data/posts";
@@ -23,7 +23,7 @@ export const Post: FC<{
   post: TypePost;
   boxProps?: BoxProps;
   isActive?: boolean;
-}> = ({ post, boxProps, isActive = false }) => {
+}> = memo(({ post, boxProps, isActive = false }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { setAccountId } = useJotaiAccountId();
   const { id, accountId, date, content, imageName, hasPlayer } = post;
@@ -100,7 +100,7 @@ export const Post: FC<{
                     />
                   )}
                 </Stack>
-                {hasPlayer && <PostPlayer />}
+                {hasPlayer && <PostPlayer isActive={isActive} />}
                 <HStack spacing={4}>
                   <Likes isActive={isActive} post={post} />
                   <RepliesButton
@@ -118,4 +118,5 @@ export const Post: FC<{
       <RepliesDrawer isOpen={isOpen} onClose={onClose} post={post} />
     </>
   );
-};
+});
+Post.displayName = "Post";
