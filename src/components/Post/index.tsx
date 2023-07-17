@@ -32,7 +32,7 @@ export const Post: FC<{
   };
   return (
     <>
-      <motion.section
+      <motion.div
         animate={"open"}
         initial={"collapsed"}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -109,7 +109,7 @@ export const Post: FC<{
             </Stack>
           </HStack>
         </Box>
-      </motion.section>
+      </motion.div>
 
       <RepliesDrawer isOpen={isOpen} onClose={onClose} post={post} />
     </>
