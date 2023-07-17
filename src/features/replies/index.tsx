@@ -51,7 +51,7 @@ export const Replies: FC = () => {
               bg={"none"}
               fontSize={"2xl"}
               icon={<IoMdArrowRoundBack />}
-              onClick={onClose}
+              onClick={onDrawerClose}
             />
             <Text fontSize={"md"} textAlign={"center"}>
               返信欄
