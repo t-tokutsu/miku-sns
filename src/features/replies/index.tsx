@@ -64,7 +64,7 @@ export const Replies: FC = () => {
           </SimpleGrid>
         </DrawerHeader>
         <DrawerBody p={0}>
-          <SimpleGrid gridTemplateRows={"auto auto 1fr"} h={"full"} pb={4}>
+          <SimpleGrid gridTemplateRows={"auto auto 1fr"} h={"full"} pb={12}>
             <Post
               boxProps={{
                 pos: "sticky",
