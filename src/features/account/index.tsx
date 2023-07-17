@@ -45,11 +45,12 @@ export const Account: FC = () => {
     <Drawer isOpen={isOpen} onClose={onDrawerClose} size={"full"}>
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerHeader p={2}>
+        <DrawerHeader bg={"gradation.green"} pb={0.5} pt={0} px={0}>
           <SimpleGrid
             alignItems={"center"}
             bg={"white"}
             gridTemplateColumns={"40px minmax(0, 1fr)"}
+            p={2}
             spacing={0}
           >
             <IconButton
