@@ -1,6 +1,7 @@
 import { Icon, chakra, HStack, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import { BiCommentDetail, BiSolidCommentDetail } from "react-icons/bi";
+import { useJotaiAccountId } from "../../features/account/useJotaiAccountId";
 import { TypePost } from "../../features/posts/data/posts";
 import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
 import { useJotaiParentPostId } from "../../features/replies/useJotaiParentId";
@@ -11,10 +12,16 @@ export const RepliesButton: FC<{
   isActive: boolean;
 }> = ({ post, isActive }) => {
   const { setParentPostId } = useJotaiParentPostId();
+  const { setAccountId } = useJotaiAccountId();
   const { getReplies } = useJotaiPosts();
   const repliesLength = getReplies(post.id).length;
   return (
-    <chakra.button onClick={() => setParentPostId(post.id)}>
+    <chakra.button
+      onClick={() => {
+        setParentPostId(post.id);
+        setAccountId(undefined);
+      }}
+    >
       <HStack
         color={
           isActive ? "currentcolor" : repliesLength ? "mikuGreen" : undefined

@@ -26,6 +26,10 @@ export const Post: FC<{
   const { setParentPostId } = useJotaiParentPostId();
   const { setAccountId } = useJotaiAccountId();
   const { id, accountId, date, content, imageName, hasPlayer } = post;
+  const openAccountPage = () => {
+    setAccountId(accountId);
+    setParentPostId(undefined);
+  };
   return (
     <motion.div
       animate={"open"}
@@ -56,7 +60,7 @@ export const Post: FC<{
           <Avatar
             as={"button"}
             bg={"gradation.green"}
-            onClick={() => setAccountId(accountId)}
+            onClick={openAccountPage}
             p={0.5}
             size={"sm"}
             src={`./images/accounts/${accountId}/icon.jpg`}
@@ -67,7 +71,7 @@ export const Post: FC<{
                 as={"button"}
                 fontSize={"sm"}
                 fontWeight={"bold"}
-                onClick={() => setAccountId(accountId)}
+                onClick={openAccountPage}
                 textAlign={"left"}
               >
                 {accountData[accountId].name}
@@ -75,7 +79,13 @@ export const Post: FC<{
               <PostDate date={date} />
             </HStack>
             <Stack>
-              <Stack as={"button"} onClick={() => setParentPostId(id)}>
+              <Stack
+                as={"button"}
+                onClick={() => {
+                  setParentPostId(id);
+                  setAccountId(undefined);
+                }}
+              >
                 <Text
                   fontSize={"sm"}
                   textAlign={"left"}

@@ -138,7 +138,7 @@ export const useUpdateJotaiPosts = () => {
                       parentPostId: targetPost.id,
                     });
                   });
-                }, getRandomNumber(300, 5000));
+                }, getRandomNumber(300, 3000));
               });
             }
           }
