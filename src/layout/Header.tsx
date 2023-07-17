@@ -44,7 +44,7 @@ export const Header: FC = () => {
         borderWidth={1}
         onClick={() => setAccountId(myAccountId)}
         size={"sm"}
-        src={`/images/accounts/${myAccountId}/icon.jpg`}
+        src={`./images/accounts/${myAccountId}/icon.jpg`}
       />
     </HStack>
   );

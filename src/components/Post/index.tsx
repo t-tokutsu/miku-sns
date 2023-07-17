@@ -59,7 +59,7 @@ export const Post: FC<{
             onClick={() => setAccountId(accountId)}
             p={0.5}
             size={"sm"}
-            src={`/images/accounts/${accountId}/icon.jpg`}
+            src={`./images/accounts/${accountId}/icon.jpg`}
           />
           <Stack spacing={1} w={"full"}>
             <HStack justifyContent={"space-between"}>
@@ -91,7 +91,7 @@ export const Post: FC<{
                     borderRadius={8}
                     loading={"lazy"}
                     maxH={isActive ? "200px" : "300px"}
-                    src={`/images/accounts/${accountId}/posts/${imageName}`}
+                    src={`./images/accounts/${accountId}/posts/${imageName}`}
                   />
                 )}
               </Stack>

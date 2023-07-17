@@ -115,7 +115,7 @@ export const useUpdateJotaiPosts = () => {
                     <Avatar
                       bg={"gradation.green"}
                       size={"xs"}
-                      src={`/images/accounts/${mikuAccountId}/icon.jpg`}
+                      src={`./images/accounts/${mikuAccountId}/icon.jpg`}
                     />
                     <Text fontSize={"sm"} fontWeight={"bold"}>
                       {unit.text}

@@ -63,7 +63,7 @@ export const Account: FC = () => {
             <HStack justifyContent={"center"} pos={"relative"}>
               <Avatar
                 size={"sm"}
-                src={`/images/accounts/${accountId}/icon.jpg`}
+                src={`./images/accounts/${accountId}/icon.jpg`}
               />
               <Text
                 fontSize={"md"}
