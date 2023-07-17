@@ -3,7 +3,6 @@ import {
   Avatar,
   Stack,
   Text,
-  Spacer,
   Box,
   BoxProps,
   chakra,
@@ -58,16 +57,16 @@ export const Post: FC<{
             src={`/images/accounts/${accountId}/icon.jpg`}
           />
           <Stack spacing={1} w={"full"}>
-            <HStack>
+            <HStack justifyContent={"space-between"}>
               <Text
                 as={"button"}
                 fontSize={"sm"}
                 fontWeight={"bold"}
                 onClick={() => setAccountId(accountId)}
+                textAlign={"left"}
               >
                 {accountData[accountId].name}
               </Text>
-              <Spacer />
               <PostDate date={date} />
             </HStack>
             <Stack>
@@ -100,6 +99,7 @@ export const Post: FC<{
           </Stack>
         </HStack>
       </Box>
+
       <RepliesDrawer isOpen={isOpen} onClose={onClose} post={post} />
     </>
   );

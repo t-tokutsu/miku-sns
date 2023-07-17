@@ -35,5 +35,5 @@ export const PostDate: FC<{
     };
   }, [update]);
 
-  return <Text fontSize={"sm"}>{formatDate(date)}</Text>;
+  return <Text fontSize={"xs"}>{formatDate(date)}</Text>;
 };
