@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "echo-netlify-basic-auth": "echo \"/*\\n  Basic-Auth: $BASIC_AUTH_ID:$BASIC_AUTH_PASSWORD\" > dist/_headers"
+    "echo-netlify-basic-auth": "echo \"/*\\n  Basic-Auth: $BASIC_AUTH_ID:$BASIC_AUTH_PASSWORD\\n\\n/images/*\\n  Cache-Control: max-age=604800\" > dist/_headers"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.7.1",
