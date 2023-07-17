@@ -73,6 +73,11 @@ export const repliesData: {
       accountId: "male_40_totonou",
       content: "これからの時代、アナログ合成が絶対流行りますよねー！",
     },
+    {
+      accountId: "male_50_toshizo",
+      content: "アナログシンセサイザーの良さは廃れない",
+      imageName: "2.jpeg",
+    },
   ],
 
   // 電圧ぽわんと響きあって（ぽわん！）
@@ -134,6 +139,10 @@ export const repliesData: {
       accountId: "female_10_sumire",
       content: "らららーー",
     },
+    {
+      accountId: "male_50_toshizo",
+      content: "電気の歌声も良いもんじゃ",
+    },
   ],
 
   // 音へと溶ける
@@ -149,6 +158,10 @@ export const repliesData: {
     {
       accountId: "male_10_yuta",
       content: "溶けるーー！",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "いい音楽は音と一体化するんじゃなー",
     },
   ],
 
@@ -195,6 +208,10 @@ export const repliesData: {
       accountId: "male_10_yuta",
       content: "どんな色がつくのかなー",
     },
+    {
+      accountId: "female_20_mint",
+      content: "小学校の美術の先生、好きだったなー。\nまだ元気にしてるかな",
+    },
   ],
 
   // その名はもちろん
@@ -210,6 +227,10 @@ export const repliesData: {
     {
       accountId: "female_10_sumire",
       content: "いったい誰ー？",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "期待が高まる！Max！！",
     },
   ],
 
@@ -235,6 +256,10 @@ export const repliesData: {
       accountId: "female_20_aomori",
       content: "やったぜ",
     },
+    {
+      accountId: "male_30_pain",
+      content: "ミク！きた！！",
+    },
   ],
 
   // 始まるよミュウテイション
@@ -254,6 +279,10 @@ export const repliesData: {
     {
       accountId: "male_50_toshizo",
       content: "はじまったな",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "ちょっとミュテってきたわ",
     },
   ],
 
@@ -320,6 +349,11 @@ export const repliesData: {
       accountId: "female_20_mint",
       content: "ブルブルぶる",
     },
+    {
+      accountId: "female_20_aomori",
+      content:
+        "昔家にあった乗ってるだけで痩せれるマシン、どこにやったんだろう？\nお母さん使ってるところ2回しか見たことなかったから、捨てたのかなー",
+    },
   ],
 
   // 企てるミュウテイション
@@ -360,6 +394,10 @@ export const repliesData: {
       accountId: "male_40_totonou",
       content: "プログラムが誤って上書きされてしまった苦い過去が蘇る",
     },
+    {
+      accountId: "male_30_pain",
+      content: "仕事でも気軽に実行できたらお腹いたくならないのになー",
+    },
   ],
 
   // この世界は（カワイイ）
@@ -378,7 +416,12 @@ export const repliesData: {
     },
     {
       accountId: "female_30_tokugawa",
-      content: "ザ・ワールド！（俺が時を止めた）",
+      content: "ザ・ワールド！（時を止めた）",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "これ？",
+      imageName: "2.jpeg",
     },
   ],
 
@@ -395,6 +438,10 @@ export const repliesData: {
     {
       accountId: "female_10_sumire",
       content: "そうだそうだ！",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "天下統一はいつの世もロマンですよね！",
     },
   ],
 
@@ -495,6 +542,10 @@ export const repliesData: {
       accountId: "male_50_toshizo",
       content: "マジで神バイブス爆上げじゃぞい",
     },
+    {
+      accountId: "female_30_tokugawa",
+      content: "ディーバって呼び方、ちょっといいよね",
+    },
   ],
 
   // 響かせるため
@@ -530,6 +581,10 @@ export const repliesData: {
     {
       accountId: "male_40_totonou",
       content: "曇りない！！",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "にーーいーーいい",
     },
   ],
 
@@ -567,6 +622,10 @@ export const repliesData: {
       accountId: "male_50_toshizo",
       content: "誰なんじゃー",
     },
+    {
+      accountId: "female_10_sumire",
+      content: "どきどき...",
+    },
   ],
 
   // わたしで〜す！（初音ミク〜！）
@@ -587,6 +646,14 @@ export const repliesData: {
       accountId: "male_30_pain",
       content: "きたー！",
     },
+    {
+      accountId: "female_20_aomori",
+      content: "わたしわたしわたし！",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "初音ミク！！！",
+    },
   ],
 
   // 変わりゆくミュウテイション
@@ -594,6 +661,7 @@ export const repliesData: {
     {
       accountId: "female_30_tokugawa",
       content: "この移ろいゆく世界で唯一変わらないもの、それがダム",
+      imageName: "1.jpeg",
     },
     {
       accountId: "male_50_toshizo",
@@ -622,6 +690,10 @@ export const repliesData: {
     {
       accountId: "male_10_yuta",
       content: "突然変異してみたい！",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "わかりみが深い",
     },
   ],
 
@@ -720,6 +792,7 @@ export const repliesData: {
     {
       accountId: "female_20_aomori",
       content: "うちの猫もかわいい",
+      imageName: "4.jpeg",
     },
   ],
 
@@ -736,6 +809,14 @@ export const repliesData: {
     {
       accountId: "male_40_totonou",
       content: "その通りです！",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "おれのものだーー！！",
+    },
+    {
+      accountId: "female_60_science",
+      content: "禿同じゃ",
     },
   ],
 };
