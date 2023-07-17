@@ -77,7 +77,7 @@ export const Replies: FC = () => {
               post={parentPost}
             />
             <RepliesInput parentPostId={parentPostId} />
-            <Stack overflow={"auto"} pb={16} pt={4} px={4}>
+            <Stack overflow={"auto"} pb={24} pt={4} px={4}>
               {getReplies(parentPostId).map((reply) => (
                 <Post key={reply.id} post={reply} />
               ))}
