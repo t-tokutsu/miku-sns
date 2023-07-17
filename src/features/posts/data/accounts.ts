@@ -17,15 +17,17 @@ export const accountData = {
   // 男性
   male_10_yuta: {
     name: "ゆうた@背番号6",
-    description: "バスケ部のイケてるやつ。",
+    description:
+      "バスケ最高！憧れの選手はカワイ・レナード。神奈川の中2男子です、気軽に絡んでいってー！",
   },
   male_30_pain: {
     name: "つねにおなかいたい",
-    description: "サラリーマン",
+    description: "今日も今日とて腹痛。",
   },
   male_40_totonou: {
     name: "整うマン",
-    description: "エンジニア。多趣味。",
+    description:
+      "フリーランスエンジニア/キャンプ/#サウナ好きと繋がりたい/#今日の積み上げ",
   },
   male_50_toshizo: {
     name: "ハイパーキーボーディスト歳三",
@@ -34,29 +36,27 @@ export const accountData = {
   // 女性
   female_10_sumire: {
     name: "平等院すみれ",
-    description: "小学生。絵を描くのが趣味",
+    description:
+      "イラスト練習中。あまりSNSに慣れていませんが、よろしくお願いします。",
   },
   female_20_aomori: {
     name: "青森県バリキャリ協会",
-    description: "青森県に住んでない",
+    description: "バリキャリではありません。青森県にも住んでいません。",
   },
   female_20_mint: {
     name: "チョコミントアイス過激派",
-    description: "彼氏と同棲中の大学院生。",
+    description: "大学院で地理学を専攻/チョコミン党/広島いいとこだよ",
   },
   female_30_tokugawa: {
     name: "徳川写実斎",
-    description: "歴史とダムが好き",
+    description: "歴史とダムと静かなところが好きです。",
   },
   female_60_science: {
     name: "理系おばあちゃん",
-    description: "私はマルマル",
+    description:
+      "おばあちゃんですがSNSを始めてみました。数学や物理のアレコレを発信中",
   },
   // その他
-  other_: {
-    name: "やまおか模型店",
-    description: "主に食品サンプルを作っている",
-  },
   license: {
     name: "ライセンスbot",
     description: "記載が必要なライセンス文を投稿するbotです。",
