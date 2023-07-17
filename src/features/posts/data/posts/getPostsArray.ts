@@ -1,4 +1,4 @@
-import { subHours } from "date-fns";
+import { subMinutes } from "date-fns";
 import { v4 } from "uuid";
 import { TypeAccountId, accountIds, myAccountId } from "../accounts";
 import { TypePost } from ".";
@@ -10,7 +10,7 @@ export const getPostsArray = (
   return postsArray.map(({ content, imageName }, index) => ({
     id: v4(),
     accountId,
-    date: subHours(new Date(), (index + 1) * 10),
+    date: subMinutes(new Date(), index + 1 + 10 * 60 * Math.random()),
     content,
     imageName,
     likeAccountIds: accountIds.flatMap((accountId) =>

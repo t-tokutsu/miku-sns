@@ -1,16 +1,24 @@
 import { Text } from "@chakra-ui/react";
-import { differenceInSeconds, format } from "date-fns";
+import {
+  differenceInMinutes,
+  differenceInSeconds,
+  format,
+  isSameDay,
+  isSameHour,
+} from "date-fns";
 import { FC, useEffect } from "react";
 import { useUpdate } from "react-use";
 
 const formatDate = (date: Date): string => {
-  const differenceSeconds = differenceInSeconds(new Date(), date);
-  if (differenceSeconds < 60) {
+  const now = new Date();
+  if (differenceInSeconds(now, date) < 60) {
     return "たった今";
-  } else if (differenceSeconds < 60 * 60) {
-    return `${Math.floor(differenceSeconds / 60)}分前`;
+  } else if (isSameHour(now, date)) {
+    return `${differenceInMinutes(now, date)}分前`;
+  } else if (isSameDay(now, date)) {
+    return format(date, "HH:mm");
   } else {
-    return format(date, "M/dd H:mm");
+    return format(date, "M/dd");
   }
 };
 
