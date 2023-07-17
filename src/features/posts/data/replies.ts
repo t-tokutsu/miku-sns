@@ -518,38 +518,224 @@ export const repliesData: {
   ],
 
   // 曇りないこの世界に（世界に）
-  93120: [],
+  93120: [
+    {
+      accountId: "female_60_science",
+      content: "曇りない世界になってほしいのう",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "世界に！",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "曇りない！！",
+    },
+  ],
 
   // 光を加える魔法（魔法）
-  96107: [],
+  96107: [
+    {
+      accountId: "female_10_sumire",
+      content: "魔法、使ってみたい！！",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "お肌はテカって欲しくないー😫",
+    },
+    {
+      accountId: "female_60_science",
+      content: "光は「波と粒子の両方の性質を併せ持つ♣♥」んじゃ",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "輝いてるよー！",
+    },
+  ],
 
   // その名はもちろん
-  99502: [],
+  99502: [
+    {
+      accountId: "male_30_pain",
+      content: "もちろん...？（2回目）",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "もはやお馴染み！",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "誰なんじゃー",
+    },
+  ],
 
   // わたしで〜す！（初音ミク〜！）
-  102710: [],
+  102710: [
+    {
+      accountId: "female_10_sumire",
+      content: "やっぱり！！",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "やった〜！",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "初音ミク〜〜〜！",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "きたー！",
+    },
+  ],
 
   // 変わりゆくミュウテイション
-  109760: [],
+  109760: [
+    {
+      accountId: "female_30_tokugawa",
+      content: "この移ろいゆく世界で唯一変わらないもの、それがダム",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "生涯現役！",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "ミュウテイション！！",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "開発だとイミュータブルの方がありがたい",
+    },
+  ],
 
   // 突然変異のように（わー！）
-  111969: [],
+  111969: [
+    {
+      accountId: "female_30_tokugawa",
+      content: "わー！",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "ワーテルローの戦い（1815年6月）",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "突然変異してみたい！",
+    },
+  ],
 
   // 切り替わるミュウテイション
-  116056: [],
+  116056: [
+    {
+      accountId: "male_30_pain",
+      content: "今日仕事でミスしちゃったけど、切り替えよう",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "切り替わってきた",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "チョコミントアイスを歯磨き粉味と言った奴は許さない",
+    },
+  ],
 
   // ウェーブテーブルも一考
-  118500: [],
+  118500: [
+    {
+      accountId: "male_50_toshizo",
+      content: "PPG Wave、懐かしいのー",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "悩みますー",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "うちのテーブルももっとオシャレなやつに変えてほしいなー",
+    },
+    {
+      accountId: "female_60_science",
+      content:
+        "基本波形にはサイン波、三角波、ノコギリ波等などがあるんじゃ。\nフーリエ変換すると綺麗な分布になるぞい",
+    },
+  ],
 
   // 裏返るミュウテイション
-  122494: [],
+  122494: [
+    {
+      accountId: "male_30_pain",
+      content:
+        "今日プレゼンで声が裏返りました。これもミュウテイションと言えなくもないですね（？）",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "ペットのカメはよく裏返ってます。自力で起き上がれないんだよねー",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "陰と陽、善と悪は表裏一体なのじゃ",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "わたしも裏返りたーい",
+    },
+  ],
 
   // 程なくランダム実行（むむむ）
-  125036: [],
+  125036: [
+    {
+      accountId: "female_20_aomori",
+      content: "なにむ！",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "むむむー",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "時には時間をかけて悩むのも大事ですよね！",
+    },
+    {
+      accountId: "female_60_science",
+      content: "ランダムネスは意外と奥が深いのじゃ",
+    },
+  ],
 
   // この世界は（カワイイ）
-  128249: [],
+  128249: [
+    {
+      accountId: "male_10_yuta",
+      content: "かわいい（かわいい）",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "この世界にいる僕も実はかわいかった...？",
+    },
+    {
+      accountId: "female_60_science",
+      content: "その通りじゃ",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "うちの猫もかわいい",
+    },
+  ],
 
   // 私のもの！
-  131329: [],
+  131329: [
+    {
+      accountId: "female_30_tokugawa",
+      content: "なんと！",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "わかる",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "その通りです！",
+    },
+  ],
 };

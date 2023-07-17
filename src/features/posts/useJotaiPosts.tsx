@@ -58,13 +58,12 @@ export const useUpdateJotaiPosts = () => {
             if (lastPhraseStartTime !== unit.startTime) {
               lastPhraseStartTime = unit.startTime;
               const targetId = `${unit.startTime}_${Date.now()}`;
-              const postText = unit.text.replace(/（.*?）/, "");
 
               // 投稿の追加
               setPosts((draft) => {
                 draft.unshift({
                   id: targetId,
-                  content: postText,
+                  content: unit.text,
                   date: new Date(),
                   accountId: mikuAccountId,
                 });
@@ -112,7 +111,7 @@ export const useUpdateJotaiPosts = () => {
                       src={`/images/accounts/${mikuAccountId}/icon.jpg`}
                     />
                     <Text fontSize={"sm"} fontWeight={"bold"}>
-                      {postText}
+                      {unit.text}
                     </Text>
                   </HStack>
                 ),
