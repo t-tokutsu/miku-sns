@@ -58,13 +58,13 @@ export const Replies: FC = () => {
               icon={<IoMdArrowRoundBack />}
               onClick={onDrawerClose}
             />
-            <Text fontSize={"md"} textAlign={"center"}>
+            <Text fontSize={"sm"} textAlign={"center"}>
               返信欄
             </Text>
           </SimpleGrid>
         </DrawerHeader>
         <DrawerBody p={0}>
-          <SimpleGrid gridTemplateRows={"auto 1fr auto"} h={"full"}>
+          <SimpleGrid gridTemplateRows={"auto auto 1fr"} h={"full"}>
             <Post
               boxProps={{
                 pos: "sticky",
@@ -76,12 +76,12 @@ export const Replies: FC = () => {
               isActive
               post={parentPost}
             />
+            <RepliesInput parentPostId={parentPostId} />
             <Stack overflow={"auto"} p={4}>
               {getReplies(parentPostId).map((reply) => (
                 <Post key={reply.id} post={reply} />
               ))}
             </Stack>
-            <RepliesInput parentPostId={parentPostId} />
           </SimpleGrid>
         </DrawerBody>
       </DrawerContent>
