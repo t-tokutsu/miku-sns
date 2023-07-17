@@ -43,7 +43,7 @@ export const Replies: FC<{
           </Text>
         </HStack>
       </chakra.button>
-      <Drawer isOpen={isOpen} onClose={onClose} size={"sm"}>
+      <Drawer isOpen={isOpen} onClose={onClose} size={"full"}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader p={1}>

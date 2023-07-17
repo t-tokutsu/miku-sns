@@ -1,11 +1,17 @@
 import {
   Avatar,
   Box,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   HStack,
   IconButton,
   SimpleGrid,
   Stack,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -17,64 +23,79 @@ import { useJotaiAccountId } from "./useJotaiAccountId";
 export const Account: FC = () => {
   const { accountId, setAccountId } = useJotaiAccountId();
   const { posts } = useJotaiPosts();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (accountId) onOpen();
+  }, [accountId, onOpen]);
+
   if (!accountId) return null;
   const { name, description } = accountData[accountId];
   const accountPosts = posts.filter(
     ({ accountId: postAccountId }) => postAccountId === accountId
   );
 
+  const onDrawerClose = () => {
+    onClose();
+    setTimeout(() => {
+      setAccountId(undefined);
+    }, 200);
+  };
+
   return (
-    <Box>
-      <SimpleGrid
-        alignItems={"center"}
-        bg={"white"}
-        gridTemplateColumns={"40px minmax(0, 1fr) 40px"}
-        p={2}
-        pos={"sticky"}
-        spacing={0}
-        top={0}
-        zIndex={"banner"}
-      >
-        <IconButton
-          aria-label={"戻る"}
-          bg={"none"}
-          fontSize={"2xl"}
-          icon={<IoMdArrowRoundBack />}
-          onClick={() => setAccountId(undefined)}
-        />
-        <HStack justifyContent={"center"} pos={"relative"}>
-          <Avatar size={"sm"} src={`/images/accounts/${accountId}/icon.jpg`} />
-          <Text
-            fontSize={"md"}
-            fontWeight={"bold"}
-            maxW={"full"}
-            overflow={"hidden"}
-            textAlign={"center"}
-            textOverflow={"ellipsis"}
-            whiteSpace={"nowrap"}
+    <Drawer isOpen={isOpen} onClose={onDrawerClose} size={"full"}>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerHeader p={2}>
+          <SimpleGrid
+            alignItems={"center"}
+            bg={"white"}
+            gridTemplateColumns={"40px minmax(0, 1fr)"}
+            spacing={0}
           >
-            {name}
-          </Text>
-        </HStack>
-      </SimpleGrid>
-      <Stack maxW={"640px"} mx={"auto"} p={4}>
-        <Box
-          bg={"gradation.purple"}
-          borderRadius={4}
-          color={"white"}
-          fontSize={"sm"}
-          fontWeight={"bold"}
-          p={3}
-        >
-          {description}
-        </Box>
-        {accountPosts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </Stack>
-    </Box>
+            <IconButton
+              aria-label={"戻る"}
+              bg={"none"}
+              fontSize={"2xl"}
+              icon={<IoMdArrowRoundBack />}
+              onClick={onDrawerClose}
+            />
+            <HStack justifyContent={"center"} pos={"relative"}>
+              <Avatar
+                size={"sm"}
+                src={`/images/accounts/${accountId}/icon.jpg`}
+              />
+              <Text
+                fontSize={"md"}
+                fontWeight={"bold"}
+                maxW={"full"}
+                overflow={"hidden"}
+                textAlign={"center"}
+                textOverflow={"ellipsis"}
+                whiteSpace={"nowrap"}
+              >
+                {name}
+              </Text>
+            </HStack>
+          </SimpleGrid>
+        </DrawerHeader>
+        <DrawerBody p={4}>
+          <Stack maxW={"640px"} mx={"auto"}>
+            <Box
+              bg={"gradation.purple"}
+              borderRadius={4}
+              color={"white"}
+              fontSize={"sm"}
+              fontWeight={"bold"}
+              p={3}
+            >
+              {description}
+            </Box>
+            {accountPosts.map((post) => (
+              <Post key={post.id} post={post} />
+            ))}
+          </Stack>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 };
