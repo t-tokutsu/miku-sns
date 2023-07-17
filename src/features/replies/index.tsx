@@ -64,7 +64,7 @@ export const Replies: FC = () => {
           </SimpleGrid>
         </DrawerHeader>
         <DrawerBody p={0}>
-          <SimpleGrid gridTemplateRows={"auto auto 1fr"} h={"full"} pb={12}>
+          <SimpleGrid gridTemplateRows={"auto auto 1fr"} h={"full"}>
             <Post
               boxProps={{
                 pos: "sticky",
@@ -77,7 +77,7 @@ export const Replies: FC = () => {
               post={parentPost}
             />
             <RepliesInput parentPostId={parentPostId} />
-            <Stack overflow={"auto"} p={4}>
+            <Stack overflow={"auto"} pb={16} pt={4} px={4}>
               {getReplies(parentPostId).map((reply) => (
                 <Post key={reply.id} post={reply} />
               ))}
