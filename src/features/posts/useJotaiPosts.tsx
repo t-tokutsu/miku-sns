@@ -1,15 +1,10 @@
-import { Stack, Text, useToast } from "@chakra-ui/react";
+import { Avatar, HStack, Text, useToast } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { useJotaiPlayer } from "../../jotai/useJotaiPlayer";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
-import {
-  accountData,
-  accountIds,
-  mikuAccountId,
-  myAccountId,
-} from "./data/accounts";
+import { accountIds, mikuAccountId, myAccountId } from "./data/accounts";
 import { TypePost, postsData } from "./data/posts";
 import { repliesData } from "./data/replies";
 
@@ -65,6 +60,7 @@ export const useUpdateJotaiPosts = () => {
               const targetId = `${unit.startTime}_${Date.now()}`;
               const postText = unit.text.replace(/（.*?）/, "");
 
+              // 投稿の追加
               setPosts((draft) => {
                 draft.unshift({
                   id: targetId,
@@ -74,6 +70,7 @@ export const useUpdateJotaiPosts = () => {
                 });
               });
 
+              // いいねの追加
               accountIds.forEach((accountId) => {
                 if (accountId === myAccountId) return;
                 if (Math.random() < 0.8) {
@@ -92,36 +89,36 @@ export const useUpdateJotaiPosts = () => {
                 }
               });
 
+              // 通知の追加
               toast({
                 duration: 2000,
                 position: "top",
                 isClosable: true,
                 render: ({ onClose }) => (
-                  <Stack
+                  <HStack
                     as={"a"}
                     bg={"gradation.green"}
-                    borderRadius={8}
+                    borderRadius={"full"}
                     borderWidth={1}
                     color={"white"}
                     href={`#${targetId}`}
-                    onClick={() => {
-                      onClose();
-                    }}
-                    px={2}
-                    py={1}
-                    spacing={0}
+                    onClick={onClose}
+                    p={1}
                     w={"full"}
                   >
-                    <Text fontSize={"sm"} fontWeight={"bold"}>
-                      {accountData[mikuAccountId].name}
-                    </Text>
+                    <Avatar
+                      bg={"gradation.green"}
+                      size={"xs"}
+                      src={`/images/accounts/${mikuAccountId}/icon.jpg`}
+                    />
                     <Text fontSize={"sm"} fontWeight={"bold"}>
                       {postText}
                     </Text>
-                  </Stack>
+                  </HStack>
                 ),
               });
 
+              // 返信の追加
               const targetRepliesDatum = repliesData[unit.startTime] ?? [];
               targetRepliesDatum.forEach((reply) => {
                 setTimeout(() => {
