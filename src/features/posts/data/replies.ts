@@ -258,43 +258,264 @@ export const repliesData: {
   ],
 
   // 突然変異が偶然（わー！）
-  56199: [],
+  56199: [
+    {
+      accountId: "male_40_totonou",
+      content:
+        "突然変異が偶然に起こることで、進化の鍵が見つかるかもしれませんね。興味深い研究ですね！",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "突然変異って面白いなー",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "わー！",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "ワワワーワ・ワーワワ",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "突然変異でどうなっちゃうんだろう？",
+    },
+  ],
 
   // 極まるよミュウテイション
-  60144: [],
+  60144: [
+    {
+      accountId: "male_30_pain",
+      content: "極まってきた",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "うおー、テンション上がってきたぞい",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "ミュウテイション、明日学校で自慢しよー",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "わたしもそろそろ極まりつつあるかも",
+    },
+  ],
 
   // 覚醒セラム振動（ワレワレワ〜）
-  62684: [],
+  62684: [
+    {
+      accountId: "female_10_sumire",
+      content: "ワレワレワ〜！！",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "ワレワレワ〜",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "最近手が震える",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "ブルブルぶる",
+    },
+  ],
 
   // 企てるミュウテイション
-  66530: [],
+  66530: [
+    {
+      accountId: "male_40_totonou",
+      content: "僕も面白いこと企画中です！\n今度一緒に面白いことやりましょうw",
+    },
+    {
+      accountId: "female_60_science",
+      content: "初音ミクはどんどん進化するのー",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "くわだてるって読むのか",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "どんなミュウテイションなんだろう！",
+    },
+  ],
 
   // 程なく上書き実行（わー！）
-  68909: [],
+  68909: [
+    {
+      accountId: "male_10_yuta",
+      content: "やっちゃえ！！",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "わー！！",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "わー！",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "プログラムが誤って上書きされてしまった苦い過去が蘇る",
+    },
+  ],
 
   // この世界は（カワイイ）
-  72140: [],
+  72140: [
+    {
+      accountId: "female_10_sumire",
+      content: "カワイイ",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "可愛すぎです！！",
+    },
+    {
+      accountId: "female_60_science",
+      content: "かわーーいいー",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "ザ・ワールド！（俺が時を止めた）",
+    },
+  ],
 
   // 私のもの！
-  75276: [],
+  75276: [
+    {
+      accountId: "female_20_aomori",
+      content: "（朗報）この世界、ミクのものだった",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "俺のものでもあるよ！",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "そうだそうだ！",
+    },
+  ],
 
   // インベイション
-  80533: [],
+  80533: [
+    {
+      accountId: "male_10_yuta",
+      content: "2番！",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "インベイションって初めて聞きました！学校でも習ったことない！",
+    },
+    {
+      accountId: "female_60_science",
+      content: "昔は喫茶店にインベーダーゲームがあったのう",
+    },
+    {
+      accountId: "male_30_pain",
+      content:
+        "コンサルが使う横文字は苦手なのに、ミクちゃんが使うとかっこいいです！",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "英語むずかしー",
+    },
+  ],
 
   // 電子の世界からやってきた
-  81798: [],
+  81798: [
+    {
+      accountId: "female_60_science",
+      content:
+        "電子の世界に行って素粒子を観察してみたいわい。クォーク、レプトン、グルーオン。スピンスピンスピン",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "電子ってなにー？電気のことかな",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "電子音楽の誕生は音楽史のターニングポイントじゃな",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "電子の世界に行ったら特殊能力とか使えるのかなー",
+    },
+  ],
 
   // 初めの音わたし
-  84844: [],
+  84844: [
+    {
+      accountId: "female_30_tokugawa",
+      content: "初音ミク！",
+    },
+    {
+      accountId: "male_40_totonou",
+      content:
+        "やはりビジネスは先行者有利でファーストペンギンになってブルーオーシャンを開拓するべきだよなー",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "もはや大御所感が出てきた",
+    },
+  ],
 
   // イノベイション
-  86821: [],
+  86821: [
+    {
+      accountId: "male_50_toshizo",
+      content: "初音ミクの誕生はまさにイノベイション！",
+    },
+    {
+      accountId: "male_40_totonou",
+      content: "世界はまだまだイノベイションで溢れている",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "うちの上司も「イノベイションを起こせ！」ってめっちゃ言ってくる",
+    },
+    {
+      accountId: "female_60_science",
+      content: "これが科学の力じゃ",
+    },
+  ],
 
   // 現実の世界にこの歌声を
-  88103: [],
+  88103: [
+    {
+      accountId: "female_20_mint",
+      content: "いつもありがとうー！",
+    },
+    {
+      accountId: "male_30_pain",
+      content: "歌声サイコー",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "マジで神バイブス爆上げじゃぞい",
+    },
+  ],
 
   // 響かせるため
-  91386: [],
+  91386: [
+    {
+      accountId: "female_10_sumire",
+      content: "聞こえてるよー！",
+    },
+    {
+      accountId: "female_60_science",
+      content: "回析は波が持つ重要な特徴の一つじゃ",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "毎日鬼リピしてるー",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "うちのゼミでもみんな聴いてる",
+    },
+  ],
 
   // 曇りないこの世界に（世界に）
   93120: [],
