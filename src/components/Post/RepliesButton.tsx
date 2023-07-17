@@ -3,17 +3,18 @@ import { FC } from "react";
 import { BiCommentDetail, BiSolidCommentDetail } from "react-icons/bi";
 import { TypePost } from "../../features/posts/data/posts";
 import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
+import { useJotaiParentPostId } from "../../features/replies/useJotaiParentId";
 
 /** @package */
 export const RepliesButton: FC<{
   post: TypePost;
-  onOpenDrawer: () => void;
   isActive: boolean;
-}> = ({ post, onOpenDrawer, isActive }) => {
+}> = ({ post, isActive }) => {
+  const { setParentPostId } = useJotaiParentPostId();
   const { getReplies } = useJotaiPosts();
   const repliesLength = getReplies(post.id).length;
   return (
-    <chakra.button onClick={onOpenDrawer}>
+    <chakra.button onClick={() => setParentPostId(post.id)}>
       <HStack
         color={
           isActive ? "currentcolor" : repliesLength ? "mikuGreen" : undefined

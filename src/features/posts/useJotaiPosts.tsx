@@ -4,6 +4,7 @@ import { atomWithImmer } from "jotai-immer";
 import { getRandomNumber } from "../../functions/getRandomNumber";
 import { useJotaiPlayer } from "../../jotai/useJotaiPlayer";
 import { usePlayerListener } from "../player/hooks/usePlayerListener";
+import { useJotaiParentPostId } from "../replies/useJotaiParentId";
 import { accountIds, mikuAccountId, myAccountId } from "./data/accounts";
 import { TypePost, postsData } from "./data/posts";
 import { repliesData } from "./data/replies";
@@ -45,6 +46,7 @@ export const useJotaiPosts = () => {
 export const useUpdateJotaiPosts = () => {
   const { player } = useJotaiPlayer();
   const { setPosts } = useJotaiPosts();
+  const { setParentPostId } = useJotaiParentPostId();
   const toast = useToast();
 
   usePlayerListener({
@@ -95,13 +97,15 @@ export const useUpdateJotaiPosts = () => {
                 isClosable: true,
                 render: ({ onClose }) => (
                   <HStack
-                    as={"a"}
+                    as={"button"}
                     bg={"gradation.green"}
                     borderRadius={"full"}
                     borderWidth={1}
                     color={"white"}
-                    href={`#${targetId}`}
-                    onClick={onClose}
+                    onClick={() => {
+                      setParentPostId(targetId);
+                      onClose();
+                    }}
                     p={1}
                     w={"full"}
                   >

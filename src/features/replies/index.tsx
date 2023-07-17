@@ -4,27 +4,40 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Text,
   IconButton,
-  Stack,
   SimpleGrid,
+  Stack,
+  Text,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { TypePost } from "../../features/posts/data/posts";
-import { useJotaiPosts } from "../../features/posts/useJotaiPosts";
+import { Post } from "../../components/Post";
+import { useJotaiPosts } from "../posts/useJotaiPosts";
 import { RepliesInput } from "./RepliesInput";
-import { Post } from ".";
+import { useJotaiParentPostId } from "./useJotaiParentId";
 
-/** @package */
-export const RepliesDrawer: FC<{
-  post: TypePost;
-  isOpen: boolean;
-  onClose: () => void;
-}> = ({ post, isOpen, onClose }) => {
-  const { getReplies } = useJotaiPosts();
+export const Replies: FC = () => {
+  const { parentPostId, setParentPostId } = useJotaiParentPostId();
+  const { posts, getReplies } = useJotaiPosts();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  useEffect(() => {
+    if (parentPostId) onOpen();
+  }, [parentPostId, onOpen]);
+  const parentPost = posts.find(({ id }) => id === parentPostId);
+
+  if (!parentPostId) return null;
+  if (!parentPost) return null;
+
+  const onDrawerClose = () => {
+    onClose();
+    setTimeout(() => {
+      setParentPostId(undefined);
+    }, 200);
+  };
+
   return (
-    <Drawer isOpen={isOpen} onClose={onClose} size={"full"}>
+    <Drawer isOpen={isOpen} onClose={onDrawerClose} size={"full"}>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader p={1}>
@@ -56,14 +69,14 @@ export const RepliesDrawer: FC<{
                 fontWeight: "bold",
               }}
               isActive
-              post={post}
+              post={parentPost}
             />
             <Stack overflow={"auto"} p={4}>
-              {getReplies(post.id).map((reply) => (
+              {getReplies(parentPostId).map((reply) => (
                 <Post key={reply.id} post={reply} />
               ))}
             </Stack>
-            <RepliesInput parentPostId={post.id} />
+            <RepliesInput parentPostId={parentPostId} />
           </SimpleGrid>
         </DrawerBody>
       </DrawerContent>

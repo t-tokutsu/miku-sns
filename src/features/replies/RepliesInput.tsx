@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { FC } from "react";
 import { FiSend } from "react-icons/fi";
-import { usePostWithKey } from "../../features/postButton/usePostWithKey";
+import { usePostWithKey } from "../postButton/usePostWithKey";
 
 export const RepliesInput: FC<
   {
