@@ -46,10 +46,10 @@ export const Player: FC = () => {
                 overflow={"hidden"}
                 whiteSpace={"nowrap"}
               >
-                <Text fontSize={"sm"} fontWeight={"bold"}>
+                <Text fontSize={"xs"} fontWeight={"bold"}>
                   {songName}
                 </Text>
-                <Text fontSize={"xs"}>{artistName}</Text>
+                <Text fontSize={"2xs"}>{artistName}</Text>
               </HStack>
             </Collapse>
           </HStack>

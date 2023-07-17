@@ -35,6 +35,7 @@ export const Post: FC<{
       <Box
         bg={"gradation.green"}
         borderRadius={8}
+        color={isActive ? "white" : undefined}
         id={post.id}
         p={0.5}
         {...boxProps}
