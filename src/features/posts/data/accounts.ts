@@ -12,7 +12,7 @@ export const accountData = {
   you: {
     name: "ボカロ好き丸@マジカルミライ2023",
     description:
-      "初音ミクをはじめとするバーチャルシンガーやボーカロイドの魅力に夢中なファンです。一緒にボカロワールドを楽しみましょう！",
+      "初音ミクをはじめとするボーカロイドのファンです！マジカルミライ楽しみ！",
   },
   // 男性
   male_10_yuta: {
@@ -52,7 +52,7 @@ export const accountData = {
     description: "歴史とダムと静かなところが好きです。",
   },
   female_60_science: {
-    name: "理系おばあちゃん",
+    name: "サイエンスおばあちゃん",
     description:
       "おばあちゃんですがSNSを始めてみました。数学や物理のアレコレを発信中",
   },
