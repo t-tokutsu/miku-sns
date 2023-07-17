@@ -32,12 +32,7 @@ export const PostButton: FC = () => {
         right={4}
         size={"lg"}
       />
-      <Modal
-        initialFocusRef={initialRef}
-        isCentered
-        isOpen={isOpen}
-        onClose={onClose}
-      >
+      <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent m={4} p={2}>
           <ModalCloseButton />
