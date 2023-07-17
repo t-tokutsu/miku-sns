@@ -177,16 +177,85 @@ export const repliesData: {
   ],
 
   // 色を加える魔法（まほう）
-  41996: [],
+  41996: [
+    {
+      accountId: "female_10_sumire",
+      content: "まほう！\nわくわくします！！",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "わしも音楽の魔法にかけられたぞい",
+    },
+    {
+      accountId: "female_20_aomori",
+      content:
+        "あたしも魔法が使えたら、満員電車乗らずに空飛んで出勤するのになー",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "どんな色がつくのかなー",
+    },
+  ],
 
   // その名はもちろん
-  45116: [],
+  45116: [
+    {
+      accountId: "male_30_pain",
+      content: "もちろん...？",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "もちろんですよねー",
+    },
+    {
+      accountId: "female_10_sumire",
+      content: "いったい誰ー？",
+    },
+  ],
 
   // わたしです〜！（初音ミク〜！）
-  48265: [],
+  48265: [
+    {
+      accountId: "female_10_sumire",
+      content: "ミクちゃんだった！！",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "初音ミク〜！",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "初音ミク〜〜〜！",
+    },
+    {
+      accountId: "female_30_tokugawa",
+      content: "きたー！",
+    },
+    {
+      accountId: "female_20_aomori",
+      content: "やったぜ",
+    },
+  ],
 
   // 始まるよミュウテイション
-  53667: [],
+  53667: [
+    {
+      accountId: "male_40_totonou",
+      content: "人生にもMutationが必要ですよね！",
+    },
+    {
+      accountId: "male_10_yuta",
+      content: "ミュウテイションってなにー？",
+    },
+    {
+      accountId: "female_20_mint",
+      content: "はじまるはじまる！",
+    },
+    {
+      accountId: "male_50_toshizo",
+      content: "はじまったな",
+    },
+  ],
 
   // 突然変異が偶然（わー！）
   56199: [],
