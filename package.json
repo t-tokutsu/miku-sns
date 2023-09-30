@@ -27,8 +27,7 @@
     "react-use": "^17.4.0",
     "react-use-scroll-direction": "^0.1.0",
     "textalive-app-api": "^0.3.2",
-    "uuid": "^9.0.0",
-    "zod": "^3.21.4"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@chakra-ui/styled-system": "^2.9.1",
